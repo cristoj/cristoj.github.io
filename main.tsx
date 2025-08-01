@@ -12,7 +12,7 @@ const developer = new CVDeveloper(
     [Locations.ACORUNA, Locations.REMOTO],
     'Desarrollador Full-Stack con especialización en Front-End y desarrollo móvil con más de 15 años de experiencia.',
     'https://www.linkedin.com/in/cristobal-terceiro/',
-    'https://github.com/cristobalvterceiro',
+    'https://cristoj.github.io',
 );
 
 developer.addSkills(SkillCategories.LANGUAGES, ['html', 'css', 'js', 'ts', 'php', 'dart']);
@@ -32,6 +32,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 <p><strong>Teléfono:</strong> ${developer.getBasicInfo().phone}</p>
                 <p><strong>Category:</strong> ${developer.getBasicInfo().jobCategories}</p>
                 <p><strong>Especialidad:</strong> ${developer.getBasicInfo().specialty}</p>
+                <p><strong>Linkedin:</strong> <a href="${developer.getBasicInfo().linkedin}" rel="nofollow noopener" target="_blank">${developer.getBasicInfo().linkedin}</a></p>
+                <p><strong>Github:</strong> <a href="${developer.getBasicInfo().github}" rel="nofollow noopener" target="_blank">${developer.getBasicInfo().github}</a></p>
             </div>
             <div style='margin-top: 20px;'>
                 <h3>📍 Ubicaciones</h3>
