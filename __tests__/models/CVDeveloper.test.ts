@@ -1,7 +1,7 @@
 import CVDeveloper from '../../models/CVDeveloper';
 import Locations from '../../models/types/Locations';
 import JobCategories from '../../models/types/JobCategories';
-import SkillCategories from '../../models/skill/SkillCategories';
+import SkillCategories from '../../models/types/skill/SkillCategories';
 
 describe('CVDeveloper', () => {
   let developer: CVDeveloper;

@@ -3,7 +3,7 @@
  */
 import CVDeveloper from '../../models/CVDeveloper';
 import Locations from '../../models/types/Locations';
-import SkillCategories from '../../models/skill/SkillCategories';
+import SkillCategories from '../../models/types/skill/SkillCategories';
 
 describe('CV Application Integration', () => {
   let developer: CVDeveloper;

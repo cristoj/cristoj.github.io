@@ -1,5 +1,5 @@
-import SkillSet from "./skill/Skill";
-import SkillCategories from "./skill/SkillCategories";
+import SkillSet from "./types/skill/Skill";
+import SkillCategories from "./types/skill/SkillCategories";
 import Locations from "./types/Locations";
 import JobCategories from "./types/JobCategories";
 import {BasicInfo} from "./types/BasicInfo";

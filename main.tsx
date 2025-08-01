@@ -2,7 +2,7 @@
 
 import CVDeveloper from './models/CVDeveloper';
 import Locations from './models/types/Locations';
-import SkillCategories from './models/skill/SkillCategories';
+import SkillCategories from './models/types/skill/SkillCategories';
 
 const developer = new CVDeveloper(
     '9f863328-1fb1-432e-a56b-70189492c37b',

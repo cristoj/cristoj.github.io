@@ -1,4 +1,4 @@
-import SkillCategories from '../../../models/skill/SkillCategories';
+import SkillCategories from '../../../models/types/skill/SkillCategories';
 
 describe('SkillCategories', () => {
   it('should have the correct values', () => {

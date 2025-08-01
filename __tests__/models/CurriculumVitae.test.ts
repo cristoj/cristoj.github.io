@@ -1,5 +1,5 @@
 import CurriculumVitae from '../../models/CurriculumVitae';
-import SkillCategories from '../../models/skill/SkillCategories';
+import SkillCategories from '../../models/types/skill/SkillCategories';
 import Locations from '../../models/types/Locations';
 import JobCategories from '../../models/types/JobCategories';
 
