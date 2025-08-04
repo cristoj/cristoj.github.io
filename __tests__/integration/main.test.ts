@@ -1,9 +1,9 @@
 /**
  * Integration test for the main application functionality
  */
-import CVDeveloper from '../../models/CVDeveloper';
-import Locations from '../../models/types/Locations';
-import SkillCategories from '../../models/types/skill/SkillCategories';
+import CVDeveloper from '../../src/models/CVDeveloper';
+import Locations from '../../src/models/types/Locations';
+import SkillCategories from '../../src/models/types/skill/SkillCategories';
 
 describe('CV Application Integration', () => {
   let developer: CVDeveloper;

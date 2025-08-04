@@ -12,7 +12,7 @@ export default {
   collectCoverage: true,
   coverageDirectory: 'coverage',
   collectCoverageFrom: [
-    'models/**/*.{ts,tsx}',
+    'src/**/*.{ts,tsx}',
     '!**/node_modules/**',
     '!**/vendor/**',
   ],
