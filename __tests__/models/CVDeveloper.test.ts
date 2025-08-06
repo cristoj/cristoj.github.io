@@ -1,7 +1,7 @@
-import CVDeveloper from '../../src/models/CVDeveloper';
-import Locations from '../../src/models/types/Locations';
-import JobCategories from '../../src/models/types/JobCategories';
-import SkillCategories from '../../src/models/types/skill/SkillCategories';
+import CVDeveloper from '@/CurriculumVitae/domain/models/CVDeveloper';
+import Locations from '@/_shared/domain/Locations';
+import JobCategories from '@/CurriculumVitae/domain/value-objects/JobCategories';
+import SkillCategories from '@/CurriculumVitae/domain/value-objects/skill/SkillCategories';
 
 describe('CVDeveloper', () => {
   let developer: CVDeveloper;

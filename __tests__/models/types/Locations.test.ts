@@ -1,4 +1,4 @@
-import Locations from '../../../src/models/types/Locations';
+import Locations from '@/_shared/domain/Locations';
 
 describe('Locations', () => {
   it('should have the correct values', () => {

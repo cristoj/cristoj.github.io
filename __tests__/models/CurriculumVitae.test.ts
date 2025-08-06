@@ -1,7 +1,7 @@
-import CurriculumVitae from '../../src/models/CurriculumVitae';
-import SkillCategories from '../../src/models/types/skill/SkillCategories';
-import Locations from '../../src/models/types/Locations';
-import JobCategories from '../../src/models/types/JobCategories';
+import CurriculumVitae from '@/CurriculumVitae/domain/models/CurriculumVitae';
+import SkillCategories from '@/CurriculumVitae/domain/value-objects/skill/SkillCategories';
+import Locations from '@/_shared/domain/Locations';
+import JobCategories from '@/CurriculumVitae/domain/value-objects/JobCategories';
 
 // Create a concrete implementation of the abstract class for testing
 class TestCurriculumVitae extends CurriculumVitae {

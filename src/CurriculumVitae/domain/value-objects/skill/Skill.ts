@@ -1,4 +1,4 @@
-import SkillCategories from "./SkillCategories";
+import SkillCategories from "@/CurriculumVitae/domain/value-objects/skill/SkillCategories";
 
 export default interface SkillSet {
     [SkillCategories.LANGUAGES]: string[];

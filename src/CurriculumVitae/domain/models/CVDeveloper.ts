@@ -1,9 +1,8 @@
-import CurriculumVitae from "./CurriculumVitae";
-import Locations from "./types/Locations";
-import JobCategories from "./types/JobCategories"; // También necesitarás esto probablemente
+import CurriculumVitae from "@/CurriculumVitae/domain/models/CurriculumVitae";
+import Locations from "@/_shared/domain/Locations";
+import JobCategories from "@/CurriculumVitae/domain/value-objects/JobCategories";
 
 class CVDeveloper extends CurriculumVitae {
-
     constructor(
         uuid: string,
         fullName: string,

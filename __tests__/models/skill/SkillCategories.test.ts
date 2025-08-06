@@ -1,4 +1,4 @@
-import SkillCategories from '../../../src/models/types/skill/SkillCategories';
+import SkillCategories from '@/CurriculumVitae/domain/value-objects/skill/SkillCategories';
 
 describe('SkillCategories', () => {
   it('should have the correct values', () => {

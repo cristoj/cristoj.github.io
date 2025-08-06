@@ -1,29 +1,33 @@
 {
   "compilerOptions": {
-    "target": "ES2020",                   // Versión de JavaScript objetivo
-    "module": "ESNext",                   // Sistema de módulos
-    "moduleResolution": "node",           // Resolución de módulos estilo Node.js
-    "lib": ["ES2020", "DOM"],            // Librerías disponibles
-    "outDir": "./dist",                   // Directorio de salida
-    "rootDir": "./",                      // Directorio raíz del código fuente
-    "strict": true,                       // ✅ Modo estricto
-    "noImplicitAny": true,               // ✅ No permite 'any' implícito
-    "strictFunctionTypes": true,          // ✅ Tipos estrictos en funciones
-    "strictNullChecks": true,            // ✅ Chequeo estricto de null/undefined
-    "strictPropertyInitialization": true, // ✅ Propiedades deben inicializarse
-    "noImplicitReturns": true,           // ✅ Todas las rutas deben retornar
-    "noImplicitOverride": true,          // ✅ Requiere 'override' en herencia
-    "exactOptionalPropertyTypes": true,   // ✅ Propiedades opcionales exactas
-    "noUnusedLocals": true,              // Detecta variables no usadas
-    "noUnusedParameters": true,          // Detecta parámetros no usados
-    "noFallthroughCasesInSwitch": true,  // Evita casos sin break en switch
-    "esModuleInterop": true,             // Interoperabilidad con CommonJS
-    "allowSyntheticDefaultImports": true, // Permite imports default sintéticos
-    "skipLibCheck": true,                // Salta chequeo de archivos .d.ts
-    "forceConsistentCasingInFileNames": true, // Consistencia en nombres de archivos
-    "declaration": true,                 // Genera archivos .d.ts
-    "declarationMap": true,              // Genera mapas para declaraciones
-    "sourceMap": true                    // Genera source maps
+    "target": "ES2022",
+    "module": "ES2022",
+    "moduleResolution": "node",
+    "lib": ["ES2022", "DOM"],
+    "outDir": "./dist",
+    "rootDir": "./",
+    "strict": true,
+    "noImplicitAny": true,
+    "strictFunctionTypes": true,
+    "strictNullChecks": true,
+    "strictPropertyInitialization": true,
+    "noImplicitReturns": true,
+    "noImplicitOverride": true,
+    "exactOptionalPropertyTypes": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "declaration": true,
+    "declarationMap": true,
+    "sourceMap": true,
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"]
+    }
   },
   "include": [
     "**/*.ts",
