@@ -16,7 +16,7 @@ var O=Object.defineProperty;var E=(s,e,t)=>e in s?O(s,e,{enumerable:!0,configura
                     <p><strong>Github:</strong> <a href="${e.github}" rel="nofollow noopener" target="_blank">${e.github}</a></p>
                 </div>
                 <div style='margin-top: 20px;'>
-                    <h3>📍 Ubicaciones</h3>
+                    <h3>Ubicaciones</h3>
                     <ul>
                         ${e.locations.map(t=>`<li>${t}</li>`).join("")}
                     </ul>
