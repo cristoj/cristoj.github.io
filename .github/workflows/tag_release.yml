@@ -1,0 +1,59 @@
+name: Release from tag on main
+on:
+  push:
+    tags:
+      - 'v*'   # Ejecuta solo cuando se empuja un tag que empiece por v
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout (historial completo)
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Asegurar rama main
+        run: git fetch origin main --depth=1
+
+      - name: Verificar que el tag apunta a un commit de main
+        id: check
+        shell: bash
+        run: |
+          # GITHUB_SHA es el commit apuntado por el tag
+          if git branch --remotes --contains "$GITHUB_SHA" | grep -qE 'origin/main'; then
+            echo "on_main=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "on_main=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Extraer título y cuerpo desde el tag
+        if: steps.check.outputs.on_main == 'true'
+        id: tagmsg
+        run: |
+          TAG="${GITHUB_REF##*/}"
+          TITLE="$(git for-each-ref "refs/tags/$TAG" --format='%(contents:subject)')"
+          BODY="$(git for-each-ref "refs/tags/$TAG" --format='%(contents)')"
+          echo "tag=$TAG" >> "$GITHUB_OUTPUT"
+          echo "title<<EOF" >> "$GITHUB_OUTPUT"
+          echo "$TITLE" >> "$GITHUB_OUTPUT"
+          echo "EOF" >> "$GITHUB_OUTPUT"
+          echo "body<<EOF" >> "$GITHUB_OUTPUT"
+          echo "$BODY" >> "$GITHUB_OUTPUT"
+          echo "EOF" >> "$GITHUB_OUTPUT"
+
+      - name: Crear release
+        if: steps.check.outputs.on_main == 'true'
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ steps.tagmsg.outputs.tag }}
+          name: ${{ steps.tagmsg.outputs.title }}
+          body: ${{ steps.tagmsg.outputs.body }}
+          generate_release_notes: false
+
+      - name: Omitido por no ser tag de main
+        if: steps.check.outputs.on_main != 'true'
+        run: echo "El tag no apunta a un commit de main; no se crea release."
