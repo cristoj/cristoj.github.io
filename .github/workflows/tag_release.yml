@@ -1,8 +1,9 @@
-name: Release from tag on main
+name: Release from annotated tag (only if on main)
+
 on:
   push:
     tags:
-      - 'v*'   # Ejecuta solo cuando se empuja un tag que empiece por v
+      - 'v*'
 
 permissions:
   contents: write
@@ -11,26 +12,24 @@ jobs:
   release:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout (historial completo)
+      - name: Checkout (historial completo y tags)
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
-      - name: Asegurar rama main
+      - name: Traer main para verificación
         run: git fetch origin main --depth=1
 
-      - name: Verificar que el tag apunta a un commit de main
+      - name: Verificar que el tag pertenece a main
         id: check
-        shell: bash
         run: |
-          # GITHUB_SHA es el commit apuntado por el tag
           if git branch --remotes --contains "$GITHUB_SHA" | grep -qE 'origin/main'; then
             echo "on_main=true" >> "$GITHUB_OUTPUT"
           else
             echo "on_main=false" >> "$GITHUB_OUTPUT"
           fi
 
-      - name: Extraer título y cuerpo desde el tag
+      - name: Extraer título y cuerpo desde el TAG anotado
         if: steps.check.outputs.on_main == 'true'
         id: tagmsg
         run: |
@@ -54,6 +53,6 @@ jobs:
           body: ${{ steps.tagmsg.outputs.body }}
           generate_release_notes: false
 
-      - name: Omitido por no ser tag de main
+      - name: Omitido (el tag no está en main)
         if: steps.check.outputs.on_main != 'true'
         run: echo "El tag no apunta a un commit de main; no se crea release."
