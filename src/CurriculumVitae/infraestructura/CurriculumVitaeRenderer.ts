@@ -38,7 +38,7 @@ export default class CurriculumVitaeRenderer {
                     <p><strong>Github:</strong> <a href="${basicInfo.github}" rel="nofollow noopener" target="_blank">${basicInfo.github}</a></p>
                 </div>
                 <div style='margin-top: 20px;'>
-                    <h3>📍 Ubicaciones</h3>
+                    <h3>Ubicaciones</h3>
                     <ul>
                         ${basicInfo.locations.map(loc => `<li>${loc}</li>`).join('')}
                     </ul>
