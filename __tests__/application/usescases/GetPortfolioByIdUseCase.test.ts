@@ -1,4 +1,4 @@
-import { GetPortfolioByUuidCase } from '@/Porfolio/application/usecases/GetPortfolioByIdUseCase';
+import { GetPortfolioByUuidCase } from '@/Porfolio/application/usecases/GetPortfolioByUuidCase';
 import PortfolioRepository from '@/Porfolio/domain/ports/PortfolioRepository';
 import { Portfolio } from '@/Porfolio/domain/models/Portfolio';
 import { PortfolioError } from '@/Porfolio/domain/errors/PortfolioError';

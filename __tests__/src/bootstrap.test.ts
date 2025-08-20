@@ -66,7 +66,8 @@ describe('bootstrap.ts', () => {
             expect.any(Array),
             expect.any(String),
             'https://www.linkedin.com/in/cristobal-terceiro/',
-            'https://cristoj.github.io'
+            'https://cristoj.github.io',
+            expect.any(Array)
         );
 
         // Verify skills were added
