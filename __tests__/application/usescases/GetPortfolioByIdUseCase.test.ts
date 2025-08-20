@@ -3,6 +3,7 @@ import PortfolioRepository from '@/Porfolio/domain/ports/PortfolioRepository';
 import { Portfolio } from '@/Porfolio/domain/models/Portfolio';
 import { PortfolioError } from '@/Porfolio/domain/errors/PortfolioError';
 
+
 describe('GetPortfolioByIdUseCase', () => {
   let repository: jest.Mocked<PortfolioRepository>;
   let useCase: GetPortfolioByUuidCase;
