@@ -14,6 +14,25 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          # Importante: obtener el historial completo para verificar ramas
+          fetch-depth: 0
+
+      - name: Verify tag is on main branch
+        id: verify-main
+        run: |
+          # Verificar si el tag actual está en la rama main
+          if git branch -r --contains ${{ github.sha }} | grep -q "origin/main"; then
+            echo "on-main=true" >> $GITHUB_OUTPUT
+            echo "✅ Tag está en main branch"
+          else
+            echo "on-main=false" >> $GITHUB_OUTPUT
+            echo "❌ Tag NO está en main branch"
+          fi
+
+      - name: Setup Node.js
+        if: steps.verify-main.outputs.on-main == 'true'
+        uses: actions/setup-node@v4
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -22,14 +41,20 @@ jobs:
           cache: 'npm'
 
       - name: Install dependencies
+        if: steps.verify-main.outputs.on-main == 'true'
         run: npm ci
 
       - name: Build
+        if: steps.verify-main.outputs.on-main == 'true'
         run: npm run build
 
       - name: Deploy to GitHub Pages
+        if: steps.verify-main.outputs.on-main == 'true'
         uses: peaceiris/actions-gh-pages@v3
-        if: github.ref == 'refs/heads/main'
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist
+
+      - name: Skip deployment (tag not on main)
+        if: steps.verify-main.outputs.on-main == 'false'
+        run: echo "⚠️ Deployment skipped - tag is not on main branch"
