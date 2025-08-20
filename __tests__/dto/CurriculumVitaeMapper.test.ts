@@ -1,4 +1,4 @@
-import CurriculumVitaeMapper from '@/CurriculumVitae/domain/dto/CurriculumVitaeMapper';
+import CurriculumVitaeMapper from '@/CurriculumVitae/domain/mappers/CurriculumVitaeMapper';
 import CVDeveloper from '@/CurriculumVitae/domain/models/CVDeveloper';
 import Locations from '@/_shared/domain/Locations';
 import SkillCategories from '@/CurriculumVitae/domain/value-objects/skill/SkillCategories';

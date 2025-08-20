@@ -1,52 +1,50 @@
-import CurriculumVitae from "@/CurriculumVitae/domain/models/CurriculumVitae";
-import {CurriculumVitaeRepository} from "@/CurriculumVitae/domain/ports/CurriculumVitaeRepository";
-import CurriculumVitaeMapper from "@/CurriculumVitae/domain/mappers/CurriculumVitaeMapper";
+import { Portfolio } from "@/Porfolio/domain/models/Portfolio";
+import PortfolioRepository from "@/Porfolio/domain/ports/PortfolioRepository";
+import PortfolioMapper from "@/Porfolio/domain/mappers/PortfolioMapper";
 
-export default class LocalStorageCurriculumVitae implements CurriculumVitaeRepository {
-    private readonly storageKey: string = 'curriculumVitae';
+export default class LocalStoragePortfolio implements PortfolioRepository {
+    private readonly storageKey: string = 'portfolio';
 
     constructor() {
         if (typeof window === 'undefined' || !window.localStorage) {
             throw new Error('No localStorage available');
         }
-        // Check if the storage key exists, if not, initialize it
         if (!localStorage.getItem(this.storageKey)) {
             localStorage.setItem(this.storageKey, JSON.stringify({}));
         }
     }
 
-    async save(cv: CurriculumVitae): Promise<void> {
+    async save(portfolio: Portfolio): Promise<void> {
         const storage = this.getStorage();
-        storage[cv.getUuid()] = CurriculumVitaeMapper.toJson(cv);
+        storage[portfolio.getUuid()] = PortfolioMapper.toJson(portfolio);
         this.setStorage(storage);
     }
 
-    async findById(uuid: string): Promise<CurriculumVitae | null> {
+    async findById(uuid: string): Promise<Portfolio | null> {
         const storage = this.getStorage();
-        const cvJson = storage[uuid];
+        const json = storage[uuid];
 
-        if (!cvJson) {
+        if (!json) {
             return null;
         }
 
-        return CurriculumVitaeMapper.fromJson(cvJson);
+        return PortfolioMapper.fromJson(json);
     }
 
-    async findAll(): Promise<CurriculumVitae[]> {
+    async findAll(): Promise<Portfolio[]> {
         const storage = this.getStorage();
-        return Object.values(storage)
-            .map(cvJson => CurriculumVitaeMapper.fromJson(cvJson));
+        return Object.values(storage).map(item => PortfolioMapper.fromJson(item));
     }
 
-    async update(cv: CurriculumVitae): Promise<void> {
+    async update(portfolio: Portfolio): Promise<void> {
         const storage = this.getStorage();
-        const key = cv.getUuid();
+        const key = portfolio.getUuid();
 
         if (!storage[key]) {
-            throw new Error(`Curriculum Vitae not found`);
+            throw new Error(`Portfolio not found`);
         }
 
-        storage[key] = CurriculumVitaeMapper.toJson(cv);
+        storage[key] = PortfolioMapper.toJson(portfolio);
         this.setStorage(storage);
     }
 
@@ -54,19 +52,17 @@ export default class LocalStorageCurriculumVitae implements CurriculumVitaeRepos
         const storage = this.getStorage();
 
         if (!storage[uuid]) {
-            throw new Error(`Curriculum Vitae not found`);
+            throw new Error(`Portfolio not found`);
         }
 
         delete storage[uuid];
         this.setStorage(storage);
     }
 
-    // Helper methods to interact with localStorage
     private getStorage(): Record<string, string> {
         if (typeof window === 'undefined' || !window.localStorage) {
             return {};
         }
-
         const storageData = localStorage.getItem(this.storageKey);
         return storageData ? JSON.parse(storageData) : {};
     }

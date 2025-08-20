@@ -6,16 +6,22 @@ import {BasicInfo} from "@/CurriculumVitae/domain/value-objects/BasicInfo";
 import CurriculumVitaeErrors from "@/CurriculumVitae/domain/errors/CurriculumVitaeErrors";
 
 abstract class CurriculumVitae {
-    protected uuid: string;
-    protected fullName: string;
-    protected email: string;
-    protected phone: string;
-    protected locations: Locations[];
-    protected specialty: string;
-    protected linkedin: string;
-    protected github: string;
-    protected jobCategories: JobCategories;
-    protected skillSet: SkillSet;
+    protected readonly uuid: string;
+    protected readonly fullName: string;
+    protected readonly email: string;
+    protected readonly phone: string;
+    protected readonly locations: Locations[];
+    protected readonly specialty: string;
+    protected readonly linkedin: string;
+    protected readonly github: string;
+    protected readonly jobCategories: JobCategories;
+    /**
+     * Array of portfolio UUIDs.
+     * @protected
+     * @type {string[] | null}
+     */
+    protected readonly portfolio: string[] | null;
+    protected readonly skillSet: SkillSet;
 
 
     protected constructor(
@@ -27,7 +33,8 @@ abstract class CurriculumVitae {
         specialty: string,
         linkedin: string,
         github: string,
-        jobCategories: JobCategories = JobCategories.OTHER
+        jobCategories: JobCategories = JobCategories.OTHER,
+        portfolio: string[] | null = null
     ) {
         CurriculumVitae.validateConstructorParams(uuid, fullName, email, phone, specialty, linkedin, github);
         this.uuid = uuid;
@@ -47,10 +54,19 @@ abstract class CurriculumVitae {
             [SkillCategories.CLOUD]: [],
             [SkillCategories.SOFT_SKILLS]: [],
         };
+        this.portfolio = portfolio;
     }
 
     getUuid(): string {
         return this.uuid;
+    }
+
+    getPortfolioUuids(): string[] | null {
+        return this.portfolio;
+    }
+
+    hasPortfolio(): boolean {
+        return this.portfolio !== null && this.portfolio.length > 0;
     }
 
     addSkill(category: SkillCategories, skillName: string): void {

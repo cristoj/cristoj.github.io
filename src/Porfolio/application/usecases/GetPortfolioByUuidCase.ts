@@ -2,7 +2,7 @@ import PortfolioRepository from '@/Porfolio/domain/ports/PortfolioRepository';
 import { Portfolio } from '@/Porfolio/domain/models/Portfolio';
 import { PortfolioError } from '@/Porfolio/domain/errors/PortfolioError';
 
-export class GetPortfolioByIdUseCase {
+export class GetPortfolioByUuidCase {
     constructor(private readonly repository: PortfolioRepository) {}
 
     async execute(uuid: string): Promise<Portfolio | null> {

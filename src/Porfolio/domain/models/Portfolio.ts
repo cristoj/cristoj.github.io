@@ -1,14 +1,22 @@
 import {PortfolioError} from '@/Porfolio/domain/errors/PortfolioError';
 
-export class Portfolio {
-    uuid: string;
-    title: string;
-    description: string;
-    technologies: string[];
-    imageUrl: string;
-    url?: string | undefined;
+type UpdatableProps = {
+    title?: string;
+    description?: string;
+    technologies?: string[];
+    imageUrl?: string;
+    url?: string;
+};
 
-    constructor(uuid: string, title: string, description: string, technologies: string[], imageUrl: string, url?: string) {
+export class Portfolio {
+    private readonly uuid: string;
+    private readonly title: string;
+    private readonly description: string;
+    private readonly technologies: string[];
+    private readonly imageUrl: string;
+    private readonly url: string | null;
+
+    constructor(uuid: string, title: string, description: string, technologies: string[], imageUrl: string, url: string | null = null) {
         Portfolio.validateConstructorParams(uuid, title, description, technologies, imageUrl);
         this.uuid = uuid;
         this.title = title;
@@ -16,6 +24,71 @@ export class Portfolio {
         this.technologies = technologies;
         this.imageUrl = imageUrl;
         this.url = url;
+    }
+
+    getUuid() {
+        return this.uuid;
+    }
+
+    getTitle() {
+        return this.title;
+    }
+
+    getDescription() {
+        return this.description;
+    }
+
+    getTechnologies() {
+        return this.technologies;
+    }
+
+    getImageUrl() {
+        return this.imageUrl;
+    }
+
+    getUrl() {
+        return this.url;
+    }
+
+    copyWith(updated: UpdatableProps): Portfolio {
+        const next = {
+            uuid: this.uuid,
+            title: updated.title ?? this.title,
+            description: updated.description ?? this.description,
+            technologies: updated.technologies ?? this.technologies,
+            imageUrl: updated.imageUrl ?? this.imageUrl,
+            url: updated.url ?? this.url,
+        };
+
+        Portfolio.validateConstructorParams(
+            next.uuid,
+            next.title,
+            next.description,
+            next.technologies,
+            next.imageUrl
+        );
+
+        return new Portfolio(next.uuid, next.title, next.description, next.technologies, next.imageUrl, next.url);
+    }
+
+    updateTitle(title: string): Portfolio {
+        return this.copyWith({ title });
+    }
+
+    updateDescription(description: string): Portfolio {
+        return this.copyWith({ description });
+    }
+
+    updateTechnologies(technologies: string[]): Portfolio {
+        return this.copyWith({ technologies });
+    }
+
+    updateImageUrl(imageUrl: string): Portfolio {
+        return this.copyWith({ imageUrl });
+    }
+
+    updateUrl(url: string): Portfolio {
+        return this.copyWith({ url });
     }
 
     private static validateConstructorParams(
@@ -31,23 +104,22 @@ export class Portfolio {
         if (!title) {
             throw new PortfolioError('Title es requerido');
         }
-
         if (!description) {
             throw new PortfolioError('Description es requerido');
         }
-
         if (!technologies || technologies.length === 0) {
             throw new PortfolioError('Technologies es requerido');
         }
-
         if (!imageUrl) {
             throw new PortfolioError('ImageUrl es requerido');
         }
     }
 
     getBasicInfo() {
-
+        return {
+            uuid: this.uuid,
+            title: this.title,
+            description: this.description
+        };
     }
-
-
 }
