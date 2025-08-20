@@ -1,21 +1,26 @@
-import { Portfolio } from "@/Porfolio/domain/models/Portfolio";
 import PortfolioRepository from "@/Porfolio/domain/ports/PortfolioRepository";
+import {Portfolio} from "@/Porfolio/domain/models/Portfolio";
 
 export default class InMemoryPortfolio implements PortfolioRepository {
+    private static instance: InMemoryPortfolio;
     private store: Map<string, Portfolio> = new Map();
+
+    private constructor() {
+    }
+
+    public static getInstance(): InMemoryPortfolio {
+        if (!InMemoryPortfolio.instance) {
+            InMemoryPortfolio.instance = new InMemoryPortfolio();
+        }
+        return InMemoryPortfolio.instance;
+    }
 
     async save(portfolio: Portfolio): Promise<void> {
         this.store.set(portfolio.getUuid(), portfolio);
     }
 
     async findById(uuid: string): Promise<Portfolio | null> {
-        // Iterate through the map to find by key (uuid)
-        for (const entry of this.store) {
-            if (entry[0] === uuid) {
-                return entry[1];
-            }
-        }
-        return null;
+        return this.store.get(uuid) || null;
     }
 
     async findAll(): Promise<Portfolio[]> {
@@ -24,22 +29,16 @@ export default class InMemoryPortfolio implements PortfolioRepository {
 
     async update(portfolio: Portfolio): Promise<void> {
         const key = portfolio.getUuid();
-        const exists = Array.from(this.store.keys()).some(k => k === key);
-
-        if (!exists) {
+        if (!this.store.has(key)) {
             throw new Error(`Portfolio not found`);
         }
-
         this.store.set(key, portfolio);
     }
 
     async delete(uuid: string): Promise<void> {
-        const exists = this.store.has(uuid);
-
-        if (!exists) {
+        if (!this.store.has(uuid)) {
             throw new Error(`Portfolio not found`);
         }
-
         this.store.delete(uuid);
     }
 }

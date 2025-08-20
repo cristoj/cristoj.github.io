@@ -3,8 +3,10 @@ import Locations from "@/_shared/domain/Locations";
 import SkillCategories from "@/CurriculumVitae/domain/value-objects/skill/SkillCategories";
 import CreateCurriculumVitaeUseCase from "@/CurriculumVitae/application/usescases/CreateCurriculumVitaeUseCase";
 import CurriculumVitaeRenderer from "@/CurriculumVitae/infraestructura/CurriculumVitaeRenderer";
-import LocalStorageCurriculumVitae from "@/CurriculumVitae/infraestructura/LocalStorageCurriculumVitae";
 import {Portfolio} from "@/Porfolio/domain/models/Portfolio";
+import {CreatePortfolioUseCase} from "@/Porfolio/application/usecases/CreatePortfolioUseCase";
+import InMemoryPortfolio from "@/Porfolio/infraestructura/InMemoryPortfolio";
+import InMemoryCurriculumVitae from "@/CurriculumVitae/infraestructura/InMemoryCurriculumVitae";
 
 export async function initializeApp(): Promise<void> {
     const portFolio = new Portfolio(
@@ -12,13 +14,17 @@ export async function initializeApp(): Promise<void> {
         'STIK',
         'App AI to image recognition',
         ['Angular', 'React', 'Flutter', 'Laravel'],
-        'https://cristoj.github.io/portfolio/assets/images/portfolio.png',
+        'assets/images/portfolio1.jpg',
         'https://cristoj.github.io/portfolio'
     );
+    const portFolioRepository = InMemoryPortfolio.getInstance();
+    const portFolioUseCase = new CreatePortfolioUseCase(portFolioRepository);
+    await portFolioUseCase.execute(portFolio);
+
     const developer = new CVDeveloper(
         '9f863328-1fb1-432e-a56b-70189492c37b',
-        'Cristobal V. Terceiro',
-        'crsitojvt@gmail.com',
+        'Cristobal V. Terceiro <{[...]}>',
+        'cristojvt@gmail.com',
         '+34697356153',
         [Locations.ACORUNA, Locations.REMOTO],
         'Desarrollador Full-Stack con especialización en Front-End y desarrollo móvil con más de 15 años de experiencia.',
@@ -33,13 +39,14 @@ export async function initializeApp(): Promise<void> {
     developer.addSkills(SkillCategories.METHODOLOGIES, ['Scrum']);
     developer.addSkills(SkillCategories.TOOLS, ['Docker', 'Postman', 'Sonarqube', 'VS Code', 'PHP Storm', 'Xcode', 'Android Studio', 'XD', 'Photoshop',]);
 
-    const repository = new LocalStorageCurriculumVitae();
-    const useCase = new CreateCurriculumVitaeUseCase(repository);
+    const cvRepository = new InMemoryCurriculumVitae();
+    const cvUseCase = new CreateCurriculumVitaeUseCase(cvRepository);
 
-    await useCase.execute(developer);
+    await cvUseCase.execute(developer);
 
     document.addEventListener('DOMContentLoaded', async  () => {
-        const renderer = new CurriculumVitaeRenderer(developer);
-        renderer.render();
+        const $app =  document.getElementById('app') ?? undefined;
+        const renderer = new CurriculumVitaeRenderer(developer, $app);
+        await renderer.render();
     });
 }

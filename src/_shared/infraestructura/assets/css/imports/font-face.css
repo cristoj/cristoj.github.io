@@ -1,0 +1,5 @@
+@font-face {
+    font-family: 'GoogleSansCode';
+    src: url("../../fonts/GoogleSansCode.woff2") format("woff2"),
+    url('../../fonts/GoogleSansCode.ttf') format('truetype');
+}

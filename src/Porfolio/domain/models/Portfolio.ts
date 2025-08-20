@@ -119,7 +119,9 @@ export class Portfolio {
         return {
             uuid: this.uuid,
             title: this.title,
-            description: this.description
+            description: this.description,
+            imageUrl: this.imageUrl,
+            url: this.url,
         };
     }
 }

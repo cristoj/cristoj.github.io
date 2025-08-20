@@ -1,0 +1,60 @@
+.header, .footer {
+    padding: .5rem;
+    background-color: var(--primary-color);
+    color: var(--text-light-color);
+}
+
+.page {
+    display: grid;
+    min-height: 100dvh;
+    grid-template-rows: 1fr auto;
+}
+
+
+
+input, button, textarea, select {
+    font: inherit;
+}
+
+p {
+    line-height: 1.2;
+    text-wrap: pretty;
+    margin-bottom: 1rem;
+}
+
+img, video, svg, canvas, audio, iframe, embed, object {
+    height: auto;
+    max-width: 100%;
+}
+
+body {
+    min-height: 100dvh;
+    color: var(--text-light-color);
+    background-color: var(--bg-light-color);
+    color: light-dark(var(--text-light-color), var(--text-dark-color));
+    background-color: light-dark(var(--bg-light-color), var(--bg-dark-color));
+    font-family: var(--font-family);
+}
+
+html {
+    color-scheme: light dark;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+        transition: none;
+    }
+}

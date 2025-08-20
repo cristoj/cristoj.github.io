@@ -1,5 +1,6 @@
 import CVDeveloper from "@/CurriculumVitae/domain/models/CVDeveloper";
 import CurriculumVitae from "@/CurriculumVitae/domain/models/CurriculumVitae";
+import PortfolioComponent from "@/Porfolio/infraestructura/components/PortfolioComponent";
 
 /**
  * Class responsible for rendering a curriculum vitae to HTML
@@ -22,14 +23,16 @@ export default class CurriculumVitaeRenderer {
     /**
      * Renders the CV to the target element
      */
-    render(): void {
-        const basicInfo = this.curriculumVitae.getBasicInfo();
+    async render(): Promise<void> {
+        window.customElements.define('portfolio-item', PortfolioComponent);
 
+        const basicInfo = this.curriculumVitae.getBasicInfo();
+        const skills = this.curriculumVitae.getSkills();
+        const portfolioUuids = this.curriculumVitae.hasPortfolio() ? this.curriculumVitae.getPortfolioUuids() : [];
         this.targetElement.innerHTML = `
-            <div id="app" style='padding: 20px; font-family: Arial, sans-serif;'>
-                <h1>🚀 Curriculum Vitae</h1>            
-                <div style='margin-bottom: 20px;'>
-                    <p><strong>Nombre:</strong> ${basicInfo.fullName}</p>
+            <div class="mt--2">
+                <h1>${basicInfo.fullName}</h1>            
+                <div class="mt--2">
                     <p><strong>Email:</strong> ${basicInfo.email}</p>
                     <p><strong>Teléfono:</strong> ${basicInfo.phone}</p>
                     <p><strong>Category:</strong> ${basicInfo.jobCategories}</p>
@@ -37,16 +40,16 @@ export default class CurriculumVitaeRenderer {
                     <p><strong>Linkedin:</strong> <a href="${basicInfo.linkedin}" rel="nofollow noopener" target="_blank">${basicInfo.linkedin}</a></p>
                     <p><strong>Github:</strong> <a href="${basicInfo.github}" rel="nofollow noopener" target="_blank">${basicInfo.github}</a></p>
                 </div>
-                <div style='margin-top: 20px;'>
+                <div class="mt--2">
                     <h3>Ubicaciones</h3>
-                    <ul>
+                    <ul class="list--unstyled">
                         ${basicInfo.locations.map(loc => `<li>${loc}</li>`).join('')}
                     </ul>
                 </div>
-                <div style='margin-top: 20px;'>
+                <div class="mt--2">
                     <h3>Skills</h3>
-                    <ul>
-                        ${Object.entries(this.curriculumVitae.getSkills()).map(([category, skills]) => {
+                    <ul class="list--unstyled">
+                        ${Object.entries(skills).map(([category, skills]) => {
                             if (!skills.length) {
                                 return ``;
                             }
@@ -54,6 +57,15 @@ export default class CurriculumVitaeRenderer {
                         }).join('')}
                     </ul>
                 </div>
+                ${portfolioUuids && portfolioUuids.length > 0 ?
+                    `<div class="mt--2">
+                            <h3>Portfolio</h3>
+                            <ul class="list--unstyled">
+                                ${portfolioUuids.map(uuid => 
+                                    `<portfolio-item uuid="${uuid}"></portfolio-item>`
+                                ).join('')}
+                            </ul>
+                    </div>` : ''}
             </div>
         `;
     }
