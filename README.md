@@ -1,6 +1,6 @@
 # Cristoj | CurriculumVitae
 
-Este proyecto es un CV interactivo desarrollado con TypeScript y Vite.
+Este proyecto es un CV desarrollado con TypeScript y Vite.
 
 ## Instalación
 
