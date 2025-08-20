@@ -9,6 +9,7 @@
     "**/*.test.ts",
     "**/*.spec.ts",
     "__tests__/**/*",
+    "__tests_extra__/types/**/*",
     "src/**/*"
   ]
 }

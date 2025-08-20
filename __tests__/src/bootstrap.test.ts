@@ -7,12 +7,12 @@ import { initializeApp } from '@/bootstrap';
 
 // Mock dependencies
 jest.mock('@/CurriculumVitae/domain/models/CVDeveloper');
-jest.mock('@/CurriculumVitae/infraestructura/LocalStorageCurriculumVitae');
+jest.mock('@/CurriculumVitae/infraestructura/InMemoryCurriculumVitae'); // <-- Cambio aquí
 jest.mock('@/CurriculumVitae/application/usescases/CreateCurriculumVitaeUseCase');
 jest.mock('@/CurriculumVitae/infraestructura/CurriculumVitaeRenderer');
 
 const MockCVDeveloper = require('@/CurriculumVitae/domain/models/CVDeveloper').default;
-const MockLocalStorage = require('@/CurriculumVitae/infraestructura/LocalStorageCurriculumVitae').default;
+const MockInMemoryCV = require('@/CurriculumVitae/infraestructura/InMemoryCurriculumVitae').default; // <-- Cambio aquí
 const MockUseCase = require('@/CurriculumVitae/application/usescases/CreateCurriculumVitaeUseCase').default;
 const MockRenderer = require('@/CurriculumVitae/infraestructura/CurriculumVitaeRenderer').default;
 
@@ -39,7 +39,7 @@ describe('bootstrap.ts', () => {
         };
         mockRepository = {};
         mockExecute = jest.fn().mockResolvedValue(undefined);
-        mockRender = jest.fn();
+        mockRender = jest.fn().mockResolvedValue(undefined); // <-- Añadir mockResolvedValue
 
         mockUseCase = {
             execute: mockExecute
@@ -49,7 +49,7 @@ describe('bootstrap.ts', () => {
         };
 
         MockCVDeveloper.mockImplementation(() => mockDeveloper);
-        MockLocalStorage.mockImplementation(() => mockRepository);
+        MockInMemoryCV.mockImplementation(() => mockRepository); // <-- Cambio aquí
         MockUseCase.mockImplementation(() => mockUseCase);
         MockRenderer.mockImplementation(() => mockRenderer);
     });
@@ -60,8 +60,8 @@ describe('bootstrap.ts', () => {
         // Verify developer creation
         expect(MockCVDeveloper).toHaveBeenCalledWith(
             '9f863328-1fb1-432e-a56b-70189492c37b',
-            'Cristobal V. Terceiro',
-            'crsitojvt@gmail.com',
+            'Cristobal V. Terceiro <{[...]}>',
+            'cristojvt@gmail.com',
             '+34697356153',
             expect.any(Array),
             expect.any(String),
@@ -77,7 +77,7 @@ describe('bootstrap.ts', () => {
         expect(mockExecute).toHaveBeenCalledWith(mockDeveloper);
 
         // Verify repository and use case creation
-        expect(MockLocalStorage).toHaveBeenCalled();
+        expect(MockInMemoryCV).toHaveBeenCalled(); // <-- Cambio aquí
         expect(MockUseCase).toHaveBeenCalledWith(mockRepository);
     });
 
@@ -96,7 +96,10 @@ describe('bootstrap.ts', () => {
         const event = new Event('DOMContentLoaded');
         document.dispatchEvent(event);
 
-        expect(MockRenderer).toHaveBeenCalledWith(mockDeveloper);
+        // Esperar a que se resuelvan las promesas
+        await new Promise(resolve => setTimeout(resolve, 0));
+
+        expect(MockRenderer).toHaveBeenCalledWith(mockDeveloper, undefined); // <-- Añadir segundo parámetro
         expect(mockRender).toHaveBeenCalled();
     });
 

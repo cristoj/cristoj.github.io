@@ -24,7 +24,9 @@ export default class CurriculumVitaeRenderer {
      * Renders the CV to the target element
      */
     async render(): Promise<void> {
-        window.customElements.define('portfolio-item', PortfolioComponent);
+        if (!window.customElements.get('portfolio-item')) {
+            window.customElements.define('portfolio-item', PortfolioComponent);
+        }
 
         const basicInfo = this.curriculumVitae.getBasicInfo();
         const skills = this.curriculumVitae.getSkills();

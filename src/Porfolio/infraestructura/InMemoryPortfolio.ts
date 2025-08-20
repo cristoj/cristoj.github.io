@@ -5,7 +5,7 @@ export default class InMemoryPortfolio implements PortfolioRepository {
     private static instance: InMemoryPortfolio;
     private store: Map<string, Portfolio> = new Map();
 
-    private constructor() {
+    public constructor() {
     }
 
     public static getInstance(): InMemoryPortfolio {
