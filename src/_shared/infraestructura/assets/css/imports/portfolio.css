@@ -2,5 +2,6 @@
     .portfolio__image {
         width: 200px;
         border-radius: 0.5rem;
+        border: 3px solid var(--primary-color);
     }
 }
