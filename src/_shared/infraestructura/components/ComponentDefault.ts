@@ -1,9 +1,9 @@
-import utilities from '@/_shared/infraestructura/assets/css/imports/utilities.css?inline';
 class ComponentDefault extends HTMLElement {
 
     constructor() {
         super();
-        this.attachShadow({mode: 'open'});
+        // not use shadowDom, it's too complex
+        //  this.attachShadow({mode: 'open'});
     }
 
     disconnectedCallback() {
@@ -12,17 +12,25 @@ class ComponentDefault extends HTMLElement {
 
     connectedCallback() {
         this.initComponent();
-        this.render();
     }
 
     protected render() {
+        // not use shadowDom, it's too complex
+        /*
         this.shadowRoot ? this.shadowRoot.innerHTML = `
            <style>
-                ${utilities}
+
                 ${this.templateCss()}
            </style>
            ${this.renderTemplate()}
        ` : null;
+       */
+        this.innerHTML = `
+           <style>                
+                ${this.templateCss()}
+           </style>
+           ${this.renderTemplate()}
+        `;
     }
 
     protected mapComponentAttributes() {
@@ -33,7 +41,7 @@ class ComponentDefault extends HTMLElement {
     }
 
     protected renderTemplate(): string {
-        return 'Portfolio ITEM';
+        return '';
     }
 
     protected initComponent(): void {
