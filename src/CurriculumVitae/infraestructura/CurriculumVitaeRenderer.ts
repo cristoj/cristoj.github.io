@@ -1,3 +1,4 @@
+// todo PDF / Share data / performance
 import CVDeveloper from "@/CurriculumVitae/domain/models/CVDeveloper";
 import CurriculumVitae from "@/CurriculumVitae/domain/models/CurriculumVitae";
 import PortfolioSectionComponent from "@/Porfolio/infraestructura/components/PortfolioSectionComponent";
