@@ -21,6 +21,18 @@ abstract class CurriculumVitae {
      * @type {string[] | null}
      */
     protected readonly portfolio: string[] | null;
+    /**
+     * Array of training UUIDs.
+     * @protected
+     * @type {string[] | null}
+     */
+    protected readonly training: string[] | null;
+    /**
+     * Array of experience UUIDs.
+     * @protected
+     * @type {string[] | null}
+     */
+    protected readonly experience: string[] | null = null;
     protected readonly skillSet: SkillSet;
 
 
@@ -34,7 +46,9 @@ abstract class CurriculumVitae {
         linkedin: string,
         github: string,
         jobCategories: JobCategories = JobCategories.OTHER,
-        portfolio: string[] | null = null
+        portfolio: string[] | null = null,
+        training: string[] | null = null,
+        experience: string[] | null = null,
     ) {
         CurriculumVitae.validateConstructorParams(uuid, fullName, email, phone, specialty, linkedin, github);
         this.uuid = uuid;
@@ -55,6 +69,8 @@ abstract class CurriculumVitae {
             [SkillCategories.SOFT_SKILLS]: [],
         };
         this.portfolio = portfolio;
+        this.training = training;
+        this.experience = experience;
     }
 
     getUuid(): string {
@@ -67,6 +83,22 @@ abstract class CurriculumVitae {
 
     hasPortfolio(): boolean {
         return this.portfolio !== null && this.portfolio.length > 0;
+    }
+
+    hasTraining(): boolean {
+        return this.training !== null && this.training.length > 0;
+    }
+
+    getTrainingUuids(): string[] | null {
+        return this.training;
+    }
+
+    hasExperience(): boolean {
+        return this.experience !== null && this.experience.length > 0;
+    }
+
+    getExperienceUuids(): string[] | null {
+        return this.experience;
     }
 
     addSkill(category: SkillCategories, skillName: string): void {

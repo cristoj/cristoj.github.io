@@ -12,9 +12,11 @@ class CVDeveloper extends CurriculumVitae {
         specialty: string,
         linkedin: string,
         github: string,
-        portfolio: string[] | null = null
+        portfolio: string[] | null = null,
+        training: string[] | null = null,
+        experience: string[] | null = null,
     ) {
-        super(uuid, fullName, email, phone, locations, specialty, linkedin, github, JobCategories.DEVELOPER, portfolio);
+        super(uuid, fullName, email, phone, locations, specialty, linkedin, github, JobCategories.DEVELOPER, portfolio, training, experience);
     }
 }
 
