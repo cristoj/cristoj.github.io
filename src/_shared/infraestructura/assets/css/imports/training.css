@@ -1,0 +1,39 @@
+.training {
+    width: min(900px, 100%) !important;
+    margin-left: auto;
+    margin-right: auto;
+    flex-direction: column;
+    > div {
+        width: 100%;
+    }
+}
+
+.training-list {
+    /*
+    display: grid;
+    gap: 3rem;
+    column-gap: 3rem;
+    grid-template-columns: repeat(auto-fit, minmax(clamp(220px, 100%, 700px), 1fr));
+    */
+    margin-top: 2rem;
+}
+
+.training__item{
+    margin-bottom: 2rem;
+}
+
+.training__item__content {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--primary-color);
+    font-size: var(--font-size-xs);
+}
+
+.training__item__title {
+    margin-bottom: 0;
+    font-family: var(--font-family), serif;
+    font-size: var(--font-size-lg);
+    letter-spacing: initial;
+    font-weight: 800;
+    -webkit-line-clamp: 3;
+}

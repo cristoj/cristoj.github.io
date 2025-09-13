@@ -1,8 +1,34 @@
 :root {
-    --primary-color: #4BCE97;
-    --bg-dark-color: #222222;
-    --bg-light-color: #F6F6F6;
+    color-scheme: light dark;
+    --primary-color: #9846d8;
+    --bg-dark-color: #060617;
+    /*--bg-light-color: #F6F6F6;*/
+    --bg-light-color: #FFFFFF;
     --text-dark-color: #F6F6F6;
-    --text-light-color: #222222;
-    --font-family: 'GoogleSansCode', sans-serif;
+    --text-dark-muted: #17002e;
+    --text-light-muted: #f1f1f1;
+    --text-light-color: #060617;
+    --bg-dark-color-lighten: #151027;
+    --portfolio-item--dark-color: #17002e;
+    --portfolio-item--light-color: transparent;
+    --current-bg: light-dark(var(--bg-light-color), var(--bg-dark-color));
+    --current-text: light-dark(var(--text-light-color), var(--text-dark-color));
+    --current-muted: light-dark(var(--text-light-muted), var(--text-dark-muted));
+    --current-portfolio-bg-color: light-dark(var(--portfolio-item--light-color), var(--portfolio-item--dark-color));
+    --font-family: 'Lato', sans-serif;
+    --font-family-titles: 'Gloock', sans-serif;
+    --aspect-ratio: 16/9;
+    --line-height: 1.3;
+    --font-size: clamp(1.2rem, 1.1vw, 1.35rem);
+    --font-size-lg: clamp(1.3rem, 1.2vw, 1.45rem);
+    --font-size-sm: clamp(1.1rem, 1vw, 1.2rem);
+    --font-size-xs: clamp(0.95rem, .9vw, 1.1rem);
+    --font-size-h1: clamp(2.3rem, 7vw, 7rem);
+    --font-size-h2: clamp(2rem, 4vw, 4rem);
+    --font-size-h3: clamp(1.5rem, 3.25vw, 3.25rem);
+    --font-size-h4: clamp(1.35rem, 2.5vw, 3.25rem);
+    --font-size-h5: var(--font-size-lg);
+    --font-size-h6: var(--font-size);
+    --font-weight-bold: 900;
+
 }

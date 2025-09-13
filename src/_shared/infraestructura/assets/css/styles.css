@@ -1,6 +1,14 @@
 @import url('imports/root.css');
 @import url('imports/font-face.css');
+@import url('imports/portfolio.css');
+@import url('imports/personal-data.css');
+@import url('imports/skills.css');
+@import url('imports/training.css');
+@import url('imports/experience.css');
 @import url('imports/utilities.css');
+@import url('imports/about.css');
+@import url('imports/menu.css');
+@import url('imports/change-theme-mode.css');
 @import url('imports/general.css');
 
 

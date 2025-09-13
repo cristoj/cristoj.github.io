@@ -1,23 +1,84 @@
-.header, .footer {
+.header{
+    position: fixed;
+    width: 100%;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 0.5rem 1rem 0.5rem 1rem;
+    z-index: 1;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px); /* Safari */
+    /*background-color: rgba(255, 255, 255, 0.1); !* Opcional: tinte semitransparente *!*/
+    border-radius: 0 0 1rem 1rem;
+}
+
+.footer {
     padding: .5rem;
     background-color: var(--primary-color);
-    color: var(--text-light-color);
+    color: var(--text-dark-color);
+    font-size: var(--font-size-xs);
 }
 
 .page {
     display: grid;
     min-height: 100dvh;
     grid-template-rows: 1fr auto;
+    word-break: break-word;
 }
 
+.main {
+    margin: 0 1rem;
+}
 
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-family-titles), serif;
+    letter-spacing: 0.25rem;
+    font-weight: var(--font-weight-bold);
+    line-height: 1.2;
+    margin-bottom: 1rem
+}
+
+h1 {
+    font-size: var(--font-size-h1);
+}
+
+h2 {
+    font-size: var(--font-size-h2);
+}
+
+h3 {
+    font-size: var(--font-size-h3);
+}
+
+h4 {
+    font-size: var(--font-size-h4);
+}
+
+h5 {
+    font-size: var(--font-size-h5);
+}
+
+h6 {
+    font-size: var(--font-size-h6);
+}
+
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: opacity 0.3s ease;
+
+    &:hover {
+        opacity: 0.6;
+    }
+}
 
 input, button, textarea, select {
     font: inherit;
 }
 
 p {
-    line-height: 1.2;
+    line-height: var(--line-height);
     text-wrap: pretty;
     margin-bottom: 1rem;
 }
@@ -31,13 +92,15 @@ body {
     min-height: 100dvh;
     color: var(--text-light-color);
     background-color: var(--bg-light-color);
-    color: light-dark(var(--text-light-color), var(--text-dark-color));
-    background-color: light-dark(var(--bg-light-color), var(--bg-dark-color));
+    color: var(--current-text);
+    background-color: var(--current-bg);
     font-family: var(--font-family);
+    font-size: var(--font-size);
+    line-height: var(--line-height);
 }
 
 html {
-    color-scheme: light dark;
+    scroll-behavior: smooth !important;
 }
 
 * {
@@ -54,7 +117,11 @@ html {
         animation-duration: 0.01ms !important;
         animation-iteration-count: 1 !important;
         transition-duration: 0.01ms !important;
-        scroll-behavior: auto !important;
         transition: none;
+        scroll-behavior: auto !important;
+
+    }
+    html {
+        scroll-behavior: smooth !important;
     }
 }

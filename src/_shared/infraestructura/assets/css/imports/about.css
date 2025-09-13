@@ -1,0 +1,25 @@
+.about {
+    display: flex;
+    width: min(1200px, 100%) !important;
+    gap: 2rem;
+    margin: 0 auto;
+}
+
+.about__image {
+    width: max(220px, 25%);
+    flex-shrink: 0;
+
+    svg {
+        width: 100%;
+    }
+
+    path {
+        fill: var(--primary-color);
+    }
+}
+
+@media (width < 768px) {
+    .about__image {
+        display: none;
+    }
+}

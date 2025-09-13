@@ -1,0 +1,36 @@
+.skills {
+    display: flex;
+
+}
+
+.skills__image {
+    width: clamp(100px, 50vw, 500px);
+
+    path {
+        fill: var(--primary-color);
+    }
+}
+
+.skills__list {
+    list-style: none;
+}
+
+.skills__list dt {
+    margin: 1.5rem 0 0.25rem 0;
+}
+
+.skills__list dd {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.skills__list .tag {
+    font-size: var(--font-size-sm);
+}
+
+@media (width < 768px) {
+    .skills__image {
+        display: none;
+    }
+}

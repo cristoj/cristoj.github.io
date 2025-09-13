@@ -1,0 +1,66 @@
+.theme-toggle {
+}
+
+.theme-toggle__checkbox {
+    display: none;
+}
+
+.theme-button {
+    cursor: pointer;
+    padding: 0.5rem;
+    path {
+        fill: var(--current-text);
+    }
+}
+
+@media (prefers-color-scheme: light) {
+    .theme-button__to-dark{
+        display: initial;
+    }
+
+    .theme-button__to-light{
+        display: none;
+    }
+
+    :root:has(#theme-toggle__checkbox:checked) {
+        --current-bg: var(--bg-dark-color);
+        --current-text: var(--text-dark-color);
+        --current-muted: var(--text-dark-muted);
+        --current-portfolio-bg-color: var(--portfolio-item--dark-color);
+
+        .theme-button__to-dark{
+            display: none;
+        }
+
+        .theme-button__to-light{
+            display: initial;
+        }
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    .theme-button__to-dark{
+        display: none;
+    }
+
+    .theme-button__to-light{
+        display: initial;
+    }
+
+    :root:has(#theme-toggle__checkbox:checked) {
+        --current-bg: var(--bg-light-color);
+        --current-text: var(--text-light-color);
+        --current-muted: var(--text-light-muted);
+        --current-portfolio-bg-color: var(--portfolio-item--light-color);
+
+        .theme-button__to-dark{
+            display: initial;
+        }
+
+        .theme-button__to-light{
+            display: none;
+        }
+    }
+}
+
+

@@ -1,0 +1,47 @@
+.personal-data {
+    text-align: center;
+}
+
+.personal-data > div {
+    flex: 1;
+}
+
+.personal-data__basic {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.personal-data__basic__location {
+    display: flex;
+    gap: 0.25rem;
+}
+
+.personal-data__basic__list {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.personal-data__basic__list li {
+    border-right: 2px solid white;
+    padding-right: 0.5rem;
+    border-right-color: light-dark(var(--text-light-muted), var(--text-dark-muted));
+
+    &:last-child {
+        border-right: none;
+        padding-right: 0;
+    }
+}
+
+@media (width < 768px) {
+    .personal-data__basic{
+        display: block;
+        text-align: center;
+    }
+    .personal-data__basic__location{
+        justify-content: center;
+    }
+}
