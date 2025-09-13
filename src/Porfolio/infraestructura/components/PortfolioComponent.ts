@@ -1,20 +1,22 @@
-import ComponentDefault from "@/_shared/infraestructura/ComponentDefault";
+import ComponentDefault from "@/_shared/infraestructura/components/ComponentDefault";
 import {Portfolio} from "@/Porfolio/domain/models/Portfolio";
-import { GetPortfolioByUuidCase } from "@/Porfolio/application/usecases/GetPortfolioByUuidCase";
+import {GetPortfolioByUuidCase} from "@/Porfolio/application/usecases/GetPortfolioByUuidCase";
 import InMemoryPortfolio from "@/Porfolio/infraestructura/InMemoryPortfolio";
-import portfolioCss from "@/_shared/infraestructura/assets/css/imports/portfolio.css?inline";
-class PortfolioComponent extends ComponentDefault {
 
+//  import portfolioCss from "@/_shared/infraestructura/assets/css/imports/portfolio.css?inline";
+class PortfolioComponent extends ComponentDefault {
+    private uuid: string | null = null;
     private portfolio: Portfolio | null = null;
     private isLoading: boolean = true;
     private error: string | null = null;
 
-    private get uuid(): string | null {
-        return this.getAttribute('uuid');
+    private get uuidFromElement(): string | null {
+        this.uuid = this.getAttribute('uuid');
+        return this.uuid;
     }
 
     protected override async initComponent(): Promise<void> {
-        if (!this.uuid) {
+        if (!this.uuidFromElement) {
             this.error = "El atributo 'uuid' es requerido.";
             this.isLoading = false;
             this.render();
@@ -23,7 +25,7 @@ class PortfolioComponent extends ComponentDefault {
 
         try {
             const getPortfolioCase = new GetPortfolioByUuidCase(InMemoryPortfolio.getInstance());
-            this.portfolio = await getPortfolioCase.execute(this.uuid);
+            this.portfolio = await getPortfolioCase.execute(this.uuid!);
             if (!this.portfolio) {
                 this.error = 'Portfolio no encontrado.';
             }
@@ -36,9 +38,11 @@ class PortfolioComponent extends ComponentDefault {
         }
     }
 
+    /*
     protected override templateCss(): string {
         return portfolioCss;
     }
+     */
     protected override renderTemplate(): string {
         if (this.isLoading) {
             return `<p>Cargando portfolio...</p>`;
@@ -53,17 +57,28 @@ class PortfolioComponent extends ComponentDefault {
         }
 
         const portfolioInfo = this.portfolio.getBasicInfo();
-
+        const portafolioTechnologies = this.portfolio.getTechnologies();
+        // language=HTML
         return `
-            <div class="portfolio">   
-                <a href="${portfolioInfo.url ?? '#'}" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: inherit;">
-                    <img src="${portfolioInfo.imageUrl}" alt="${portfolioInfo.title}" class="portfolio__image d--block">
-                    <h3>${portfolioInfo.title}</h3>
+            <div>
+                <a href="${portfolioInfo.url ?? '#'}" target="_blank" rel="noopener noreferrer">
+                    <div class="portfolio-list__item__item__image"><img class="d--block" src="${portfolioInfo.imageUrl}"
+                                                                        alt="${portfolioInfo.title}"></div>
                 </a>
-                <p>${portfolioInfo.description}</p>
+            </div>
+            <div class="portfolio-list__item__content">
+                <h3 class="portfolio-list__item__title">${portfolioInfo.title}</h3>
+                <p class="portfolio-list__item__description">${portfolioInfo.description}</p>
+                <div class="portfolio-list__item__tags">${this.renderTechnologies(portafolioTechnologies)}</div>
             </div>
         `;
     }
 
+    private renderTechnologies(technologies: string[]): string {
+        return technologies.map(tech => `<span class="tag tag--outline--primary">${tech}</span>`).join('');
+    }
+
+
 }
+
 export default PortfolioComponent;
