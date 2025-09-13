@@ -38,7 +38,6 @@ export class HeaderComponent extends ComponentDefault {
                             ${this.portfolioUuids && this.portfolioUuids.length > 0 ? '<li class="menu--main__item"><a href="#portfolio">Proyectos</a></li>' : ''}
                             ${this.trainingUuids && this.trainingUuids.length > 0 ? '<li class="menu--main__item"><a href="#training">Formación</a></li>' : ''}
                             ${this.experienceUuids && this.experienceUuids.length > 0 ? '<li class="menu--main__item"><a href="#experience">Experiencia</a></li>' : ''}
-                            <li class="menu--main__item"><a href="#">PDF</a></li>
                         </ul>
                     </nav>
                 </div>
