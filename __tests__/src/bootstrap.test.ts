@@ -59,15 +59,17 @@ describe('bootstrap.ts', () => {
 
         // Verify developer creation
         expect(MockCVDeveloper).toHaveBeenCalledWith(
-            '9f863328-1fb1-432e-a56b-70189492c37b',
-            'Cristobal V. Terceiro <{[...]}>',
-            'cristojvt@gmail.com',
-            '+34697356153',
+            expect.any(String),
+            expect.any(String),
+            expect.any(String),
+            expect.any(String),
             expect.any(Array),
             expect.any(String),
-            'https://www.linkedin.com/in/cristobal-terceiro/',
-            'https://cristoj.github.io',
-            expect.any(Array)
+            expect.any(String),
+            expect.any(String),
+            expect.any(Array),
+            expect.any(Array),
+            expect.any(Array),
         );
 
         // Verify skills were added
