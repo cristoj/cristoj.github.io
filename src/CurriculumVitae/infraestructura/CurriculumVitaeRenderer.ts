@@ -5,6 +5,7 @@ import PortfolioSectionComponent from "@/Porfolio/infraestructura/components/Por
 import TrainingSectionComponent from "@/Training/infraestructura/components/TrainingSectionComponent";
 import ExperienceSectionComponent from "@/Experience/infraestructura/components/ExperienceSectionComponent";
 import {HeaderComponent} from "@/_shared/infraestructura/components/HeaderComponent";
+import CurriculumVitaeSchemaComponent from "@/_shared/infraestructura/components/CurriculumVitaeSchemaComponent";
 
 /**
  * Class responsible for rendering a curriculum vitae to HTML
@@ -42,6 +43,10 @@ export default class CurriculumVitaeRenderer {
 
         if (!window.customElements.get('header-app')) {
             window.customElements.define('header-app', HeaderComponent);
+        }
+
+        if (!window.customElements.get('schema-component')) {
+            window.customElements.define('schema-component', CurriculumVitaeSchemaComponent);
         }
 
         const basicInfo = this.curriculumVitae.getBasicInfo();
@@ -181,6 +186,11 @@ export default class CurriculumVitaeRenderer {
                     </div>
                 </section>
             </div>
+            <schema-component
+                    uuid="${this.curriculumVitae.getUuid()}"
+                    basicInfo='${JSON.stringify(basicInfo)}'
+                    skills='${JSON.stringify(skills)}'
+            ></schema-component>
         `;
     }
 
