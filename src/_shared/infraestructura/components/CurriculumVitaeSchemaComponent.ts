@@ -79,12 +79,6 @@ class CurriculumVitaeSchemaComponent extends ComponentDefault {
         document.head.appendChild(script);
     }
 
-    /**
-     * Returns the JSON string for the schema
-     */
-    getJsonString(): string {
-        return JSON.stringify(this.generatePersonSchema(), null, 2);
-    }
 }
 
 export default CurriculumVitaeSchemaComponent;

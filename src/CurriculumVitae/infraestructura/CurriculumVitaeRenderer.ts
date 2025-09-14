@@ -128,7 +128,7 @@ export default class CurriculumVitaeRenderer {
                     </div>
                 </section>
                 <section
-                        class="show-reveal height-lg-100 py-sm--5"
+                        class="show-reveal height-lg-100 py-sm--5 content-visibility--auto"
                         id="skills"
                 >
                     <div class="skills mt-sm--1">
@@ -164,7 +164,7 @@ export default class CurriculumVitaeRenderer {
                         ? `<experience-section uuids="${experienceUuids}"></experience-section>`
                         : ''}
                 <section
-                        class="py--6"
+                        class="py--6 content-visibility--auto"
                         id="about"
                 >
                     <div class="about mt-sm--1">

@@ -38,7 +38,7 @@ class PortfolioSectionComponent extends ComponentDefault {
         // language=HTML
         return `
             <section
-                    class="mt--2 portafolio"
+                    class="mt--2 portafolio content-visibility--auto"
                     id="portfolio"
             >
                 <h2 class="text-lg-center">Algunos proyectos</h2>

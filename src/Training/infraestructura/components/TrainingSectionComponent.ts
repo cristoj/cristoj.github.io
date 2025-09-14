@@ -29,7 +29,7 @@ class TrainingSectionComponent extends ComponentDefault {
         // language=HTML
         return `
             <section
-                    class="mt--2 py-sm--5 training height-lg-100"
+                    class="mt--2 py-sm--5 training height-lg-100 content-visibility--auto"
                     id="training"
             >
                 <div class="">
