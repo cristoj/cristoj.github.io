@@ -55,7 +55,7 @@ var P=Object.defineProperty;var $=(r,e,t)=>e in r?P(r,e,{enumerable:!0,configura
                         <img class="experience__item__image ${t.getTitle()==="STIK"?"experience__item__image--stik":""}"
                              src="assets/images/experience/${t.getLogoPath()}"
                              alt="Logo de ${t.getTitle()}">
-                        <h5 class="experience__item__title">${t.getTitle()}</h5>
+                        <h3 class="experience__item__title">${t.getTitle()}</h3>
                     </div>
                     <div class="experience__item__date">${t.getDate()}</div>
                 </div>
