@@ -47,7 +47,7 @@ class AppSeeder {
                 'STIK',
                 'SaaS de CX con uso de reconocimiento de imagen. Desarrollo de panel de administración, panel de clientes, webs corporativas y app móvil',
                 ['Angular', 'React', 'Flutter', 'Laravel', 'AWS', 'Cloudflare', 'Firebase'],
-                'assets/images/portfolio/stik.jpg',
+                'assets/images/portfolio/stik.webp',
                 'https://www.stik.world'
             ),
             new Portfolio(
@@ -55,7 +55,7 @@ class AppSeeder {
                 'CEOENet',
                 'Intranet de CEOE para sus asociados. Desarrollo de panel de clientes y app móvil',
                 ['Angular', 'Flutter'],
-                'assets/images/portfolio/ceoenet.jpg',
+                'assets/images/portfolio/ceoenet.webp',
                 'https://ceoe.net'
             ),
             new Portfolio(
@@ -63,7 +63,7 @@ class AppSeeder {
                 'Fundación CEOE',
                 'Web corporativa de la Fundación CEOE',
                 ['WordPress'],
-                'assets/images/portfolio/fundacion-ceoe.jpg',
+                'assets/images/portfolio/fundacion-ceoe.webp',
                 'https://www.fundacionceoe.es/'
             ),
             new Portfolio(
@@ -71,7 +71,7 @@ class AppSeeder {
                 'CEPYME500',
                 'Proyecto Empresarial con las 500 pymes con mayor crecimiento del año. Web corporativa, panel de usuarios y aplicación móvil',
                 ['Angular', 'Flutter', 'Stripe', 'AWS'],
-                'assets/images/portfolio/cepyme500.jpg',
+                'assets/images/portfolio/cepyme500.webp',
                 'https://www.cepyme500.es'
             ),
             new Portfolio(
@@ -79,7 +79,7 @@ class AppSeeder {
                 'Juntos Separamos',
                 'Proyecto web para la Diputación de Ourense. Panel de gestión de residuos de la provincia de Ourense',
                 ['Angular', 'laravel'],
-                'assets/images/portfolio/juntosseparamos.jpg',
+                'assets/images/portfolio/juntosseparamos.webp',
                 'https://juntosseparamos.depourense.es'
             ),
             new Portfolio(
@@ -87,7 +87,7 @@ class AppSeeder {
                 'Rec Parenting',
                 'Plataforma donde psicólogos conectan con sus pacientes por medio de videoconferencias. Web corporativa con pagos, plataforma web y app móvil',
                 ['Angular', 'Flutter', 'Wordpress', 'Stripe', 'AWS'],
-                'assets/images/portfolio/recparenting.jpg',
+                'assets/images/portfolio/recparenting.webp',
                 'https://www.recparenting.com'
             ),
             new Portfolio(
@@ -95,7 +95,7 @@ class AppSeeder {
                 'CEOETech',
                 'La mayor plataforma de información legislativa nacional y europea. Panel de administración de usuarios y buscador de ayudas y subvenciones con pasarela de pago',
                 ['Laravel', 'Stripe'],
-                'assets/images/portfolio/ceoetech.jpg',
+                'assets/images/portfolio/ceoetech.webp',
                 'https://ceoe.tech'
             ),
             new Portfolio(
@@ -103,7 +103,7 @@ class AppSeeder {
                 'Podoclínica',
                 'Gestión de clínica podológica. Panel de administración vía plataforma web con reservas de citas',
                 ['Angular', 'Laravel', 'AWS'],
-                'assets/images/portfolio/podoclinicacoruna.jpg',
+                'assets/images/portfolio/podoclinicacoruna.webp',
                 'https://gestion.podoclinicacoruna.es'
             ),
         ];
@@ -196,7 +196,7 @@ class AppSeeder {
                 'Startup con producto propio. Red social + plataforma de CX basada en productos con tecnología de IA+RI.',
                 'Desarrollo FrontEnd y móvil en coordinación con el equipo de BackEnd. Aportación de conocimientos de emprendimiento para el proyecto en general.',
                 '2024/~',
-                'logo_stik.png'
+                'logo_stik.webp'
             ),
             new Experience(
                 '20922240-dbb0-43b1-b589-6d614fe3076e',
@@ -204,7 +204,7 @@ class AppSeeder {
                 'Consultora tecnológica y agencia de comunicación',
                 'Desarrollo FullStack y móvil para los diferentes clientes de la empresa (CEPYME, CEOE, Cafés Siboney, Central Lechera Asturiana, Ecoembes, etc.).',
                 '2016/2024',
-                'logo_upmedia.png'
+                'logo_upmedia.webp'
             ),
             new Experience(
                 'b69494d5-92ee-45f5-809c-76948d5f3fe1',
@@ -212,7 +212,7 @@ class AppSeeder {
                 'Portal web de intercambio de productos y servicios empresariales',
                 'Desarrollo FrontEnd de la parte privada del portal',
                 '2011/2016',
-                'logo_trocobuy.png'
+                'logo_trocobuy.webp'
             ),
             new Experience(
                 'a916ece1-bcc5-41f7-93b6-fa41ff69cc2b',
@@ -220,7 +220,7 @@ class AppSeeder {
                 'Agencia de financiación privada',
                 'Desarrollo de minisites para clientes y gestión de email-marketing.',
                 '2009/2011',
-                'logo_iberfinancia.png'
+                'logo_iberfinancia.webp'
             )
         ]
         const experienceRepository = InMemoryExperience.getInstance();
