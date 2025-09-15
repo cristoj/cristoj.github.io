@@ -21,7 +21,11 @@ export class HeaderComponent extends ComponentDefault {
         // language=HTML
         return `
             <header class="header">
-                <div><img class="logo" src="/assets/images/logo.svg"></div>
+                <div><img
+                        class="logo"
+                        src="/assets/images/logo.svg"
+                        alt="Logo de Cristobal Terceiro"
+                ></div>
                 <div class="menu--main">
                     <button type="button"
                             class="menu-toggle"

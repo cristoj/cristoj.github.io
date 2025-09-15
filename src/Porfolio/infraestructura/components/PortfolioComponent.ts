@@ -62,8 +62,10 @@ class PortfolioComponent extends ComponentDefault {
         return `
             <div>
                 <a href="${portfolioInfo.url ?? '#'}" target="_blank" rel="noopener noreferrer">
-                    <div class="portfolio-list__item__item__image"><img class="d--block" src="${portfolioInfo.imageUrl}"
-                                                                        alt="${portfolioInfo.title}"></div>
+                    <div class="portfolio-list__item__item__image">
+                        <img class="d--block" 
+                             src="${portfolioInfo.imageUrl}" 
+                             alt="Captura de pantalla de ${portfolioInfo.title}"></div>
                 </a>
             </div>
             <div class="portfolio-list__item__content">
