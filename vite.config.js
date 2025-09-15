@@ -20,6 +20,7 @@ export default defineConfig({
         VitePWA({
             strategies: 'generateSW',
             registerType: 'autoUpdate',
+            injectRegister: 'auto',
             workbox: {
                 globPatterns: ['**/*.{js,css,html,ico,png,svg}'],
                 runtimeCaching: [
@@ -27,7 +28,7 @@ export default defineConfig({
                         urlPattern: ({ request }) => request.mode === 'navigate',
                         handler: 'NetworkFirst',
                         options: {
-                            cacheName: 'navigation-cache',
+                            cacheName: 'pages-cache-v1',
                         },
                     },
                     {
@@ -37,14 +38,11 @@ export default defineConfig({
                             request.destination === 'worker',
                         handler: 'StaleWhileRevalidate',
                         options: {
-                            cacheName: 'assets-cache',
+                            cacheName: 'assets-cache-v1',
                         },
                     },
                 ],
-            },
-            srcDir: 'src',
-            filename: 'seeder.ts',
-            injectRegister: 'script'
+            }
         })
     ]
 })
