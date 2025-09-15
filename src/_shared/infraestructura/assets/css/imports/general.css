@@ -16,7 +16,7 @@
 .footer {
     padding: .5rem;
     background-color: var(--primary-color);
-    color: var(--text-dark-color);
+    color: var(--text-light-color);
     font-size: var(--font-size-xs);
 }
 
