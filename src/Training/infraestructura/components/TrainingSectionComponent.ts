@@ -32,11 +32,9 @@ class TrainingSectionComponent extends ComponentDefault {
                     class="mt--2 py-sm--5 training height-lg-100 content-visibility--auto"
                     id="training"
             >
-                <div class="">
-                    <h2 class="text-lg-center">Formación</h2>
-                    <div class="training-list">
-                        ${this.uuids.map(uuid => `<training-item class="training-list__item" uuid="${uuid}"></training-item>`).join('')}
-                    </div>
+                <h2 class="text-lg-center">Formación</h2>
+                <div class="training-list">
+                    ${this.uuids.map(uuid => `<training-item class="training-list__item" uuid="${uuid}"></training-item>`).join('')}
                 </div>
             </section>`;
     }

@@ -73,10 +73,11 @@
 @media (width >= 768px) {
     .height-lg-100 {
         min-height: 100dvh;
-        display: flex;
         align-items: center;
+        align-content: center;
         width: 100%;
         justify-content: center;
+        justify-items: center;
     }
 
     .height-lg-100--no-menu {
