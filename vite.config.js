@@ -7,6 +7,11 @@ export default defineConfig({
     build: {
         outDir: 'dist'
     },
+    preview: {
+        headers: {
+            'Cache-Control': 'public, max-age=31536000, immutable'
+        }
+    },
     server: {
         port: 3000,
         open: true
