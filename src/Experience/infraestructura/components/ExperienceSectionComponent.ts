@@ -28,7 +28,7 @@ class ExperienceSectionComponent extends ComponentDefault {
             window.customElements.define('experience-item', ExperienceComponent);
         }
         return `
-      <section class="mt--2 experience height-lg-100 content-visibility--auto"
+      <section class="mt--2 pt--6 experience height-lg-100 content-visibility--auto"
        id="experience">
         <h2 class="text-lg-center">Experiencia</h2>
         <div class="experience-list">

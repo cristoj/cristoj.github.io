@@ -40,8 +40,8 @@ export class HeaderComponent extends ComponentDefault {
                             <li class="menu--main__item"><a href="#profile">Perfil</a></li>
                             <li class="menu--main__item"><a href="#skills">Skills</a></li>
                             ${this.portfolioUuids && this.portfolioUuids.length > 0 ? '<li class="menu--main__item"><a href="#portfolio">Proyectos</a></li>' : ''}
-                            ${this.trainingUuids && this.trainingUuids.length > 0 ? '<li class="menu--main__item"><a href="#training">Formación</a></li>' : ''}
                             ${this.experienceUuids && this.experienceUuids.length > 0 ? '<li class="menu--main__item"><a href="#experience">Experiencia</a></li>' : ''}
+                            ${this.trainingUuids && this.trainingUuids.length > 0 ? '<li class="menu--main__item"><a href="#training">Formación</a></li>' : ''}
                             <li class="menu--main__item">
                                 <a href="https://drive.google.com/file/d/1GO7k50-BFbRMAeJELvhmRXlRRVprhJQZ/view?usp=sharing"
                                    rel="noopener noreferrer"

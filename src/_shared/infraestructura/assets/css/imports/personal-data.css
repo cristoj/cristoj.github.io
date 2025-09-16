@@ -26,13 +26,15 @@
 }
 
 .personal-data__basic__list li {
-    border-right: 2px solid white;
-    padding-right: 0.5rem;
-    border-right-color: light-dark(var(--text-light-muted), var(--text-dark-muted));
 
-    &:last-child {
-        border-right: none;
-        padding-right: 0;
+    &:after{
+        padding-left: 0.5rem;
+        content: "&";
+    }
+
+    &:last-child:after {
+        content: none;
+        padding: 0;
     }
 }
 
