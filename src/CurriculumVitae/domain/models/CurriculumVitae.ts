@@ -66,7 +66,7 @@ abstract class CurriculumVitae {
             [SkillCategories.TOOLS]: [],
             [SkillCategories.METHODOLOGIES]: [],
             [SkillCategories.CLOUD]: [],
-            [SkillCategories.SOFT_SKILLS]: [],
+            [SkillCategories.OTHERS]: [],
         };
         this.portfolio = portfolio;
         this.training = training;
@@ -121,7 +121,7 @@ abstract class CurriculumVitae {
             [SkillCategories.TOOLS]: this.skillSet[SkillCategories.TOOLS],
             [SkillCategories.METHODOLOGIES]: this.skillSet[SkillCategories.METHODOLOGIES],
             [SkillCategories.CLOUD]: this.skillSet[SkillCategories.CLOUD],
-            [SkillCategories.SOFT_SKILLS]: this.skillSet[SkillCategories.SOFT_SKILLS],
+            [SkillCategories.OTHERS]: this.skillSet[SkillCategories.OTHERS],
         }
     }
 

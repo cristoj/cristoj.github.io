@@ -154,13 +154,14 @@ export default class CurriculumVitaeRenderer {
                         ? `<portfolio-section uuids="${portfolioUuids}"></portfolio-section>`
                         : ''}
 
-                ${trainingUuids && trainingUuids.length > 0
-                        ? `<training-section uuids="${trainingUuids}"></training-section>`
-                        : ''}
-
                 ${experienceUuids && experienceUuids.length > 0
                         ? `<experience-section uuids="${experienceUuids}"></experience-section>`
                         : ''}
+
+                ${trainingUuids && trainingUuids.length > 0
+                        ? `<training-section uuids="${trainingUuids}"></training-section>`
+                        : ''}
+                
                 <section
                         class="py--6 content-visibility--auto"
                         id="about"
@@ -174,12 +175,14 @@ export default class CurriculumVitaeRenderer {
                         </div>
                         <div>
                             <h2>Sobre mi</h2>
-                            <p>Me considero un profesional responsable y organizado. Los retos me motivan, me hacen
-                                aprender y crecer. En mi carrera, el tesón y la dedicación han sido siempre mis
-                                mejores herramientas. Por eso, me enorgullece decir que he entregado cada proyecto
-                                cumpliendo las expectativas y superando las dificultades que iban apareciendo. Mi
-                                objetivo es seguir aportando mi granito de arena, con la misma energía, en un equipo que
-                                comparta mi visión.</p>
+                            <p>Me considero un profesional responsable y organizado. Los retos me
+                                motivan, me hacen aprender y crecer.</p>
+                            <p>En mi carrera, el tesón y la dedicación han sido siempre mis mejores
+                                herramientas. Por eso, me enorgullece decir que he entregado cada
+                                proyecto cumpliendo las expectativas y superando las dificultades que
+                                iban apareciendo.</p>
+                            <p>Mi objetivo es seguir aportando mi granito de arena, con la misma
+                                energía, en un equipo que comparta mi visión.</p>
                         </div>
                     </div>
                 </section>

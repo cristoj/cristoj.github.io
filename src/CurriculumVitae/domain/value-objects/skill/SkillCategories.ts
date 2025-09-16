@@ -4,6 +4,6 @@ enum SkillCategories {
     TOOLS = "Herramientas",
     METHODOLOGIES = "Metodologías",
     CLOUD = "Cloud/DevOps",
-    SOFT_SKILLS = "Habilidades Blandas"
+    OTHERS = "Otros"
 }
 export default SkillCategories;

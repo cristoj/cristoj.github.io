@@ -106,7 +106,7 @@ describe('CurriculumVitae', () => {
       expect(skills[SkillCategories.TOOLS]).toContain('VS Code');
       expect(skills[SkillCategories.METHODOLOGIES]).toEqual([]);
       expect(skills[SkillCategories.CLOUD]).toEqual([]);
-      expect(skills[SkillCategories.SOFT_SKILLS]).toEqual([]);
+      expect(skills[SkillCategories.OTHERS]).toEqual([]);
     });
   });
 

@@ -34,7 +34,7 @@ export default class CurriculumVitaeMapper {
                 tools: skills[SkillCategories.TOOLS],
                 methodologies: skills[SkillCategories.METHODOLOGIES],
                 cloud: skills[SkillCategories.CLOUD],
-                softSkills: skills[SkillCategories.SOFT_SKILLS]
+                softSkills: skills[SkillCategories.OTHERS]
             }
         };
 
@@ -100,7 +100,7 @@ export default class CurriculumVitaeMapper {
             cv.addSkills(SkillCategories.CLOUD, data.skills.cloud);
         }
         if (data.skills.softSkills) {
-            cv.addSkills(SkillCategories.SOFT_SKILLS, data.skills.softSkills);
+            cv.addSkills(SkillCategories.OTHERS, data.skills.softSkills);
         }
 
         return cv;

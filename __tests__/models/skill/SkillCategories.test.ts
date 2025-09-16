@@ -7,7 +7,7 @@ describe('SkillCategories', () => {
     expect(SkillCategories.TOOLS).toBe('Herramientas');
     expect(SkillCategories.METHODOLOGIES).toBe('Metodologías');
     expect(SkillCategories.CLOUD).toBe('Cloud/DevOps');
-    expect(SkillCategories.SOFT_SKILLS).toBe('Habilidades Blandas');
+    expect(SkillCategories.OTHERS).toBe('Otros');
   });
 
   it('should have all expected categories', () => {
@@ -17,7 +17,7 @@ describe('SkillCategories', () => {
       'Herramientas',
       'Metodologías',
       'Cloud/DevOps',
-      'Habilidades Blandas'
+      'Otros'
     ];
 
     const allCategories = Object.values(SkillCategories);

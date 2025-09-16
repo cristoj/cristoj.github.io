@@ -73,7 +73,7 @@ describe('bootstrap.ts', () => {
         );
 
         // Verify skills were added
-        expect(mockDeveloper.addSkills).toHaveBeenCalledTimes(5);
+        expect(mockDeveloper.addSkills).toHaveBeenCalledTimes(6);
 
         // Verify use case execution
         expect(mockExecute).toHaveBeenCalledWith(mockDeveloper);

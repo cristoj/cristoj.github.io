@@ -6,5 +6,5 @@ export default interface SkillSet {
     [SkillCategories.TOOLS]: string[];
     [SkillCategories.METHODOLOGIES]: string[];
     [SkillCategories.CLOUD]: string[];
-    [SkillCategories.SOFT_SKILLS]: string[];
+    [SkillCategories.OTHERS]: string[];
 }
