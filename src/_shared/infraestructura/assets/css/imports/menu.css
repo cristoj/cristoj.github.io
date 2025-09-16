@@ -16,6 +16,14 @@
     display: none;
 }
 
+.menu--main__item__icon {
+    vertical-align: middle;
+
+    path {
+        fill: var(--current-text);
+    }
+}
+
 @media (width < 800px) {
     .menu--main {
         flex: 1;
