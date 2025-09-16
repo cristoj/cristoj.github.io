@@ -59,7 +59,7 @@
     vertical-align: middle;
 
     path {
-        fill: light-dark(var(--bg-dark-color), var(--bg-light-color));
+        fill: var(--current-text);
     }
 }
 
