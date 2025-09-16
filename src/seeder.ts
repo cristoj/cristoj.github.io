@@ -24,7 +24,7 @@ class AppSeeder {
             'cristojvt@gmail.com',
             '+34697356153',
             [Locations.ACORUNA, Locations.REMOTO],
-            'Desarrollador Full-Stack con más de 15 años de experiencia en todo tipo de proyectos para clientes',
+            'Desarrollador Full-Stack con más de 15 años de experiencia en Front-End | Back-End | Mobile',
             'https://www.linkedin.com/in/cristobal-terceiro',
             'https://github.com/cristoj',
             portFolioListUuids,
@@ -32,11 +32,12 @@ class AppSeeder {
             experienceListUuids
         );
 
-        developer.addSkills(SkillCategories.LANGUAGES, ['html', 'css', 'js', 'ts', 'php', 'dart']);
+        developer.addSkills(SkillCategories.LANGUAGES, ['html', 'css', 'js', 'ts', 'php', 'dart', 'mysql']);
         developer.addSkills(SkillCategories.FRAMEWORKS, ['Angular', 'React', 'Flutter', 'Laravel', 'WordPress', 'Astro']);
-        developer.addSkills(SkillCategories.CLOUD, ['GitHub', 'AWS', 'Vercel', 'Cloudflare', 'Firebase', 'Mailchimp']);
+        developer.addSkills(SkillCategories.TOOLS, ['Docker', 'Postman', 'SonarQube', 'VS Code', 'PHP Storm', 'Xcode', 'A. Studio', 'XD', 'Photoshop',]);
+        developer.addSkills(SkillCategories.CLOUD, ['GitHub', 'AWS', 'Vercel', 'Cloudflare', 'Firebase', 'Mailchimp', 'Apps Stores']);
         developer.addSkills(SkillCategories.METHODOLOGIES, ['Scrum']);
-        developer.addSkills(SkillCategories.TOOLS, ['Docker', 'Postman', 'Sonarqube', 'VS Code', 'PHP Storm', 'Xcode', 'Android Studio', 'XD', 'Photoshop',]);
+        developer.addSkills(SkillCategories.OTHERS, ['Emprendimiento', 'Trabajo en equipo', 'Ganas de aprender', 'Resolución de problemas']);
         return developer;
      }
 
@@ -45,23 +46,23 @@ class AppSeeder {
             new Portfolio(
                 '14207ae2-0b3d-40af-a06b-07c2b5c9ceb7',
                 'STIK',
-                'SaaS de CX con uso de reconocimiento de imagen. Desarrollo de panel de administración, panel de clientes, webs corporativas y app móvil',
-                ['Angular', 'React', 'Flutter', 'Laravel', 'AWS', 'Cloudflare', 'Firebase'],
+                'SaaS de CX con uso de reconocimiento de imagen. Desarrollo de panel de administración, panel de clientes, webs corporativas y app móvil. Proyecto galardonado en eventos de innovación.',
+                ['Angular', 'React', 'Flutter', 'Laravel', 'Astro', 'AWS', 'Cloudflare', 'Firebase'],
                 'assets/images/portfolio/stik.webp',
                 'https://www.stik.world'
             ),
             new Portfolio(
                 '15a3c319-abf7-4b44-b5c9-78d2ce000576',
                 'CEOENet',
-                'Intranet de CEOE para sus asociados. Desarrollo de panel de clientes y app móvil',
-                ['Angular', 'Flutter'],
+                'Intranet de CEOE para sus asociados. Desarrollo de panel de clientes y app móvil y encargado técnico. Gran responsabilidad. Las empresas más importantes del país son usuarios recurrentes.',
+                ['Angular', 'Flutter', 'AWS', 'Firebase'],
                 'assets/images/portfolio/ceoenet.webp',
                 'https://ceoe.net'
             ),
             new Portfolio(
                 '87cb94cd-a6c7-4789-9be1-a9f8a5543eaa',
                 'Fundación CEOE',
-                'Web corporativa de la Fundación CEOE',
+                'Desarrollo de la web corporativa de la Fundación CEOE, una plataforma de alto perfil para una de las entidades más influyentes del país. Fui responsable de la ejecución y la calidad del proyecto, asegurando que la plataforma cumpliera con las altas expectativas.',
                 ['WordPress'],
                 'assets/images/portfolio/fundacion-ceoe.webp',
                 'https://www.fundacionceoe.es/'
@@ -69,7 +70,7 @@ class AppSeeder {
             new Portfolio(
                 '2dab667a-0385-41a7-abd9-6834c83f7ff8',
                 'CEPYME500',
-                'Proyecto Empresarial con las 500 pymes con mayor crecimiento del año. Web corporativa, panel de usuarios y aplicación móvil',
+                'Proyecto Empresarial con las 500 pymes con mayor crecimiento del año. Web corporativa, panel de usuarios y aplicación móvil. Proyecto con grandes cantidades de datos financieros en su base de datos.',
                 ['Angular', 'Flutter', 'Stripe', 'AWS'],
                 'assets/images/portfolio/cepyme500.webp',
                 'https://www.cepyme500.es'
@@ -77,7 +78,7 @@ class AppSeeder {
             new Portfolio(
                 '0187f894-eda7-48ec-9e0a-c72688314b1d',
                 'Juntos Separamos',
-                'Proyecto web para la Diputación de Ourense. Panel de gestión de residuos de la provincia de Ourense',
+                'Proyecto web para la Diputación de Ourense. Desarrollo de un panel de gestión de residuos de la provincia, contribuyendo al avance de la economía circular.',
                 ['Angular', 'laravel'],
                 'assets/images/portfolio/juntosseparamos.webp',
                 'https://juntosseparamos.depourense.es'
@@ -85,7 +86,7 @@ class AppSeeder {
             new Portfolio(
                 'db7378b4-5ef1-46bb-abdb-1cea6963da6b',
                 'Rec Parenting',
-                'Plataforma donde psicólogos conectan con sus pacientes por medio de videoconferencias. Web corporativa con pagos, plataforma web y app móvil',
+                'Plataforma para psicólogos con web corporativa y app móvil, pagos, videoconferencias y panel de control de citas. Responsable técnico del proyecto, liderado por Ana Aznar y Alejandro Agag.',
                 ['Angular', 'Flutter', 'Wordpress', 'Stripe', 'AWS'],
                 'assets/images/portfolio/recparenting.webp',
                 'https://www.recparenting.com'
@@ -93,16 +94,16 @@ class AppSeeder {
             new Portfolio(
                 '8627492d-59c9-4296-8484-bf058a840e51',
                 'CEOETech',
-                'La mayor plataforma de información legislativa nacional y europea. Panel de administración de usuarios y buscador de ayudas y subvenciones con pasarela de pago',
-                ['Laravel', 'Stripe'],
+                'Intranet de CEOE para sus asociados. Desarrollo de panel de clientes y app móvil y encargado técnico. Gran responsabilidad. Las empresas más importantes del país son usuarios recurrentes.',
+                ['Laravel', 'Stripe', 'AWS'],
                 'assets/images/portfolio/ceoetech.webp',
                 'https://ceoe.tech'
             ),
             new Portfolio(
                 '5938e62e-b521-41b5-be88-291a706cd716',
                 'Podoclínica',
-                'Gestión de clínica podológica. Panel de administración vía plataforma web con reservas de citas',
-                ['Angular', 'Laravel', 'AWS'],
+                'ERP clínica podológica. Panel de administración vía plataforma web con reservas de citas. Reto personal, ya que me enfrenté yo sólo a este proyecto, consiguiendo los hitos marcados.',
+                ['Laravel', 'AWS'],
                 'assets/images/portfolio/podoclinicacoruna.webp',
                 'https://gestion.podoclinicacoruna.es'
             ),
@@ -118,14 +119,6 @@ class AppSeeder {
     private async generateTrainingUuids(): Promise<string[]> {
         const trainingsList: Training[] = [
             new Training(
-                '10e3df13-f7e1-44e7-8ea4-bb0194966652',
-                'Grado Ingeniería Informática',
-                'UNED',
-                'Online',
-                '2024',
-                '~'
-            ),
-            new Training(
                 '140dea6b-cee9-427d-9ffd-b37d22a08491',
                 'Emprendimiento y Startups',
                 'ISDI | EOI',
@@ -138,6 +131,14 @@ class AppSeeder {
                 'CNTG',
                 'Online',
                 '2024',
+            ),
+            new Training(
+                '10e3df13-f7e1-44e7-8ea4-bb0194966652',
+                'Grado Ingeniería Informática',
+                'UNED',
+                'Online',
+                '2024',
+                '~'
             ),
             new Training(
                 '6ebf2c71-4ee4-4e25-99e2-1e3d6bf06611',
@@ -194,7 +195,7 @@ class AppSeeder {
                 '6c18232b-fc61-46f0-b11f-7b5ba91dfe54',
                 'STIK',
                 'Startup con producto propio. Red social + plataforma de CX basada en productos con tecnología de IA+RI.',
-                'Desarrollo FrontEnd y móvil en coordinación con el equipo de BackEnd. Aportación de conocimientos de emprendimiento para el proyecto en general.',
+                'Desarrollo FrontEnd y móvil en coordinación con el equipo de BackEnd. Aporté mis conocimientos de emprendimiento, consecuión del certificado ENISA-Startup o +300k€ en recursos desde diferentes programas (AWS/Google/Nvidia, etc).',
                 '2024/~',
                 'logo_stik.webp'
             ),
@@ -202,7 +203,7 @@ class AppSeeder {
                 '20922240-dbb0-43b1-b589-6d614fe3076e',
                 'UPMEDIA',
                 'Consultora tecnológica y agencia de comunicación',
-                'Desarrollo FullStack y móvil para los diferentes clientes de la empresa (CEPYME, CEOE, Cafés Siboney, Central Lechera Asturiana, Ecoembes, etc.).',
+                'Desarrollo FullStack y móvil para los diferentes clientes de la empresa (CEPYME, CEOE, Cafés Siboney, Central Lechera Asturiana, Ecoembes, etc.). Fui responsable de la implementación de la base tecnológica y la innovación en los proyectos, asegurando que cada solución estuviera a la vanguardia.',
                 '2016/2024',
                 'logo_upmedia.webp'
             ),
@@ -210,7 +211,8 @@ class AppSeeder {
                 'b69494d5-92ee-45f5-809c-76948d5f3fe1',
                 'Trocobuy',
                 'Portal web de intercambio de productos y servicios empresariales',
-                'Desarrollo FrontEnd de la parte privada del portal',
+                'Desarrollo FrontEnd de la parte privada del portal. No sólo ayudé a mejorar la interfaz de la plataforma, además gracias\n' +
+                'a mis recomendaciones en cuanto a publicidad online mejoramos un 40% la consecución de leads de nuevos usuarios.',
                 '2011/2016',
                 'logo_trocobuy.webp'
             ),
@@ -218,7 +220,7 @@ class AppSeeder {
                 'a916ece1-bcc5-41f7-93b6-fa41ff69cc2b',
                 'Iberfinancia',
                 'Agencia de financiación privada',
-                'Desarrollo de minisites para clientes y gestión de email-marketing.',
+                'Agencia de financiación privada. Lideré al poco tiempo uno de los servicios principales de la empresa, SearchTask, email-marketing para los clientes, con envío de millones de emails al mes.',
                 '2009/2011',
                 'logo_iberfinancia.webp'
             )
