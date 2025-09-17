@@ -220,7 +220,7 @@ class AppSeeder {
                 'a916ece1-bcc5-41f7-93b6-fa41ff69cc2b',
                 'Iberfinancia',
                 'Agencia de financiación privada.',
-                'Agencia de financiación privada. Lideré al poco tiempo uno de los servicios principales de la empresa, SearchTask, email-marketing para los clientes, con envío de millones de emails al mes.',
+                'Desarrollador Front-End. Lideré al poco tiempo uno de los servicios principales de la empresa, SearchTask (SaaS de email-marketing), con envío de millones de emails al mes.',
                 '2009/2011',
                 'logo_iberfinancia.webp'
             )
