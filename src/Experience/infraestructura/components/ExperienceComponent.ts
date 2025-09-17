@@ -57,14 +57,14 @@ class ExperienceComponent extends ComponentDefault {
                 <div class="experience__item__header">
                     <div class="experience__item__header__image-title">
                         <img class="experience__item__image ${info.getTitle() === 'STIK' ? 'experience__item__image--stik' : ''}"
-                             src="assets/images/experience/${info.getLogoPath()}"
+                             src="/assets/images/experience/${info.getLogoPath()}"
                              alt="Logo de ${info.getTitle()}">
                         <h3 class="experience__item__title">${info.getTitle()}</h3>
                     </div>
                     <div class="experience__item__date">${info.getDate()}</div>
                 </div>
-                <div class="experience__item__description">${info.getDescription()}</div>
-                <div class="experience__item__skills">${info.getSkills()}</div>
+                <div class="experience__item__description">${info.getSkills()}</div>
+                <div class="experience__item__skills">${info.getDescription()}</div>
             </div>
         `;
     }

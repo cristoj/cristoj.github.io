@@ -195,22 +195,22 @@ class AppSeeder {
                 '6c18232b-fc61-46f0-b11f-7b5ba91dfe54',
                 'STIK',
                 'Startup con producto propio. Red social + plataforma de CX basada en productos con tecnología de IA+RI.',
-                'Desarrollo FrontEnd y móvil en coordinación con el equipo de BackEnd. Aporté mis conocimientos de emprendimiento, consecuión del certificado ENISA-Startup o +300k€ en recursos desde diferentes programas (AWS/Google/Nvidia, etc).',
+                'CIO & desarrollador Front-End y móvil en coordinación con el equipo Back-End. Aporté mi conocimiento en emprendimiento y desarrollo miento, logrando la certificación ENISA-Startup y más de 300k€ en recursos de programas de AWS, Google, Nvidia, etc.',
                 '2024/~',
                 'logo_stik.webp'
             ),
             new Experience(
                 '20922240-dbb0-43b1-b589-6d614fe3076e',
                 'UPMEDIA',
-                'Consultora tecnológica y agencia de comunicación',
-                'Desarrollo FullStack y móvil para los diferentes clientes de la empresa (CEPYME, CEOE, Cafés Siboney, Central Lechera Asturiana, Ecoembes, etc.). Fui responsable de la implementación de la base tecnológica y la innovación en los proyectos, asegurando que cada solución estuviera a la vanguardia.',
+                'Consultora tecnológica y agencia de comunicación.',
+                'Desarrollo Full-Stack y móvil para diferentes clientes (CEPYME, CEOE, Cafés Siboney, Central Lechera Asturiana, Ecoembes, etc.). Fui responsable de la implementación de la base tecnológica y la innovación, asegurando que los proyectos estuvieran a la vanguardia. Lideré la obtención del certificado ISO9001, apoyado por una empresa certificadora.',
                 '2016/2024',
                 'logo_upmedia.webp'
             ),
             new Experience(
                 'b69494d5-92ee-45f5-809c-76948d5f3fe1',
                 'Trocobuy',
-                'Portal web de intercambio de productos y servicios empresariales',
+                'Portal web de intercambio de productos y servicios empresariales.',
                 'Desarrollo FrontEnd de la parte privada del portal. No sólo ayudé a mejorar la interfaz de la plataforma, además gracias\n' +
                 'a mis recomendaciones en cuanto a publicidad online mejoramos un 40% la consecución de leads de nuevos usuarios.',
                 '2011/2016',
@@ -219,7 +219,7 @@ class AppSeeder {
             new Experience(
                 'a916ece1-bcc5-41f7-93b6-fa41ff69cc2b',
                 'Iberfinancia',
-                'Agencia de financiación privada',
+                'Agencia de financiación privada.',
                 'Agencia de financiación privada. Lideré al poco tiempo uno de los servicios principales de la empresa, SearchTask, email-marketing para los clientes, con envío de millones de emails al mes.',
                 '2009/2011',
                 'logo_iberfinancia.webp'
