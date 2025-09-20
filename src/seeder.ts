@@ -94,7 +94,7 @@ class AppSeeder {
             new Portfolio(
                 '8627492d-59c9-4296-8484-bf058a840e51',
                 'CEOETech',
-                'Intranet de CEOE para sus asociados. Desarrollo de panel de clientes y app móvil y encargado técnico. Gran responsabilidad. Las empresas más importantes del país son usuarios recurrentes.',
+                'La mayor plataforma de información legislativa nacional y europea. Panel de administración de usuarios, buscador de ayudas y subvenciones, y pasarela de pago. Demostré mi capacidad de colaboración trabajando codo a codo con otra empresa para el desarrollo del proyecto.',
                 ['Laravel', 'Stripe', 'AWS'],
                 'assets/images/portfolio/ceoetech.webp',
                 'https://ceoe.tech'
