@@ -222,7 +222,7 @@ var k=Object.defineProperty;var P=(r,e,t)=>e in r?k(r,e,{enumerable:!0,configura
                                     calidad y los procesos.
                                 </li>
                                 <li> Aportar conocimientos de emprendimiento que resultaron en la consecución de más de
-                                    300k€ en recursos para un proyecto.
+                                    300k€ en recursos para el proyecto STIK.
                                 </li>
                                 <li> Mejorar el rendimiento web de clientes por encima del 90% con tecnologías como
                                     Astro.
