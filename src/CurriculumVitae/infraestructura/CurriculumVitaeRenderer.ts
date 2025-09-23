@@ -125,6 +125,50 @@ export default class CurriculumVitaeRenderer {
                     </div>
                 </section>
                 <section
+                        class="py-lg-6 pt--6 content-visibility--auto"
+                        id="about"
+                >
+                    <div class="about mt-sm--1">
+                        <div class="about__image">
+                            <svg class="" xmlns="http://www.w3.org/2000/svg" height="20px"
+                                 viewBox="0 -960 960 960" width="24px">
+                                <path d="m499-287 335-335-52-52-335 335 52 52Zm-261 87q-100-5-149-42T40-349q0-65 53.5-105.5T242-503q39-3 58.5-12.5T320-542q0-26-29.5-39T193-600l7-80q103 8 151.5 41.5T400-542q0 53-38.5 83T248-423q-64 5-96 23.5T120-349q0 35 28 50.5t94 18.5l-4 80Zm280 7L353-358l382-382q20-20 47.5-20t47.5 20l70 70q20 20 20 47.5T900-575L518-193Zm-159 33q-17 4-30-9t-9-30l33-159 165 165-159 33Z"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <h2>Sobre mí</h2>
+                            <p>Me considero un profesional responsable y organizado que asume los retos como una
+                                oportunidad para aprender y crecer. Este enfoque lo apliqué en mi último proyecto, la
+                                startup STIK, donde no solo me enfrenté a desafíos técnicos, sino que también aporté mi
+                                formación en emprendimiento para impulsar el proyecto.
+                            <p>
+                            <p>Como desarrollador Full-Stack, mi experiencia incluye la gestión de proyectos end-to-end
+                                y la coordinación directa con clientes de alto perfil (como CEOE, CEPYME, Diputación de
+                                Ourense, Ecoembes, CLA, etc...), asegurando la correcta definición de los requisitos y
+                                una comunicación fluida.</p>
+                            <p>Algunos logros incluyen:</p>
+                            <ul class="about__list">
+                                <li>Fui responsable de la integración del motor de reconocimiento de imagen en la
+                                    plataforma STIK (IA), mejorando y aplicando una tecnología que ya había explorado
+                                    hace 8 años (pionero en su utilización en España), demostrando mi capacidad para
+                                    estar a la vanguardia.
+                                </li>
+                                <li> Liderar la obtención de la certificación ISO 9001, demostrando mi compromiso con la
+                                    calidad y los procesos.
+                                </li>
+                                <li> Aportar conocimientos de emprendimiento que resultaron en la consecución de más de
+                                    300k€ en recursos para un proyecto.
+                                </li>
+                                <li> Mejorar el rendimiento web de clientes por encima del 90% con tecnologías como
+                                    Astro.
+                                </li>
+                            </ul>
+                            <p> Estoy en constante búsqueda de nuevos desafíos que me permitan seguir creciendo
+                                profesional y personalmente.</p>
+                        </div>
+                    </div>
+                </section>
+                <section
                         class="show-reveal height-lg-100 py-sm--5 content-visibility--auto"
                         id="skills"
                 >
@@ -160,31 +204,6 @@ export default class CurriculumVitaeRenderer {
                 ${trainingUuids && trainingUuids.length > 0
                         ? `<training-section uuids="${trainingUuids}"></training-section>`
                         : ''}
-                
-                <section
-                        class="py--6 content-visibility--auto"
-                        id="about"
-                >
-                    <div class="about mt-sm--1">
-                        <div class="about__image">
-                            <svg class="" xmlns="http://www.w3.org/2000/svg" height="20px"
-                                 viewBox="0 -960 960 960" width="24px">
-                                <path d="m499-287 335-335-52-52-335 335 52 52Zm-261 87q-100-5-149-42T40-349q0-65 53.5-105.5T242-503q39-3 58.5-12.5T320-542q0-26-29.5-39T193-600l7-80q103 8 151.5 41.5T400-542q0 53-38.5 83T248-423q-64 5-96 23.5T120-349q0 35 28 50.5t94 18.5l-4 80Zm280 7L353-358l382-382q20-20 47.5-20t47.5 20l70 70q20 20 20 47.5T900-575L518-193Zm-159 33q-17 4-30-9t-9-30l33-159 165 165-159 33Z"/>
-                            </svg>
-                        </div>
-                        <div>
-                            <h2>Sobre mi</h2>
-                            <p>Me considero un profesional responsable y organizado. Los retos me
-                                motivan, me hacen aprender y crecer.</p>
-                            <p>En mi carrera, el tesón y la dedicación han sido siempre mis mejores
-                                herramientas. Por eso, me enorgullece decir que he entregado cada
-                                proyecto cumpliendo las expectativas y superando las dificultades que
-                                iban apareciendo.</p>
-                            <p>Mi objetivo es seguir aportando mi granito de arena, con la misma
-                                energía, en un equipo que comparta mi visión.</p>
-                        </div>
-                    </div>
-                </section>
             </div>
             <schema-component
                     uuid="${this.curriculumVitae.getUuid()}"

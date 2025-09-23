@@ -18,6 +18,14 @@
     }
 }
 
+.about__list {
+    margin-left: 2rem;
+}
+
+.about__list li{
+    margin-bottom: 1rem;
+}
+
 @media (width < 768px) {
     .about__image {
         display: none;

@@ -38,6 +38,7 @@ export class HeaderComponent extends ComponentDefault {
                     <nav class="">
                         <ul class="menu--main__items">
                             <li class="menu--main__item"><a href="#profile">Perfil</a></li>
+                            <li class="menu--main__item"><a href="#about">Sobre mi</a></li>
                             <li class="menu--main__item"><a href="#skills">Skills</a></li>
                             ${this.portfolioUuids && this.portfolioUuids.length > 0 ? '<li class="menu--main__item"><a href="#portfolio">Proyectos</a></li>' : ''}
                             ${this.experienceUuids && this.experienceUuids.length > 0 ? '<li class="menu--main__item"><a href="#experience">Experiencia</a></li>' : ''}

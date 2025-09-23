@@ -24,7 +24,7 @@
     }
 }
 
-@media (width < 830px) {
+@media (width < 950px) {
     .menu--main {
         flex: 1;
     }

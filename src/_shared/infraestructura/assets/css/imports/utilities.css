@@ -75,6 +75,10 @@
 
 
 @media (width >= 768px) {
+    .py-lg-6{
+        padding-top: 6rem;
+        padding-bottom: 6rem;
+    }
     .height-lg-100 {
         min-height: 100dvh;
         align-items: center;
