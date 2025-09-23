@@ -157,7 +157,7 @@ export default class CurriculumVitaeRenderer {
                                     calidad y los procesos.
                                 </li>
                                 <li> Aportar conocimientos de emprendimiento que resultaron en la consecución de más de
-                                    300k€ en recursos para un proyecto.
+                                    300k€ en recursos para el proyecto STIK.
                                 </li>
                                 <li> Mejorar el rendimiento web de clientes por encima del 90% con tecnologías como
                                     Astro.
