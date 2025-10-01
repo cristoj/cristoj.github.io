@@ -1,4 +1,4 @@
-import {PortfolioError} from '@/Porfolio/domain/errors/PortfolioError';
+import {PortfolioError} from '@/Portfolio/domain/errors/PortfolioError';
 
 type UpdatableProps = {
     title?: string;

@@ -1,16 +1,16 @@
 import CVDeveloper from "@/CurriculumVitae/domain/models/CVDeveloper";
 import CurriculumVitae from "@/CurriculumVitae/domain/models/CurriculumVitae";
-import {Portfolio} from "@/Porfolio/domain/models/Portfolio";
-import InMemoryPortfolio from "@/Porfolio/infraestructura/InMemoryPortfolio";
-import {CreatePortfolioUseCase} from "@/Porfolio/application/usecases/CreatePortfolioUseCase";
+import {Portfolio} from "@/Portfolio/domain/models/Portfolio";
+import {CreatePortfolioUseCase} from "@/Portfolio/application/usecases/CreatePortfolioUseCase";
 import {Training} from "@/Training/domain/models/Training";
 import {CreateTrainingUseCase} from "@/Training/application/usecases/CreateTrainingUseCase";
-import InMemoryTraining from "@/Training/infraestructura/InMemoryTraining";
 import Locations from "@/_shared/domain/Locations";
 import SkillCategories from "@/CurriculumVitae/domain/value-objects/skill/SkillCategories";
 import {Experience} from "@/Experience/domain/models/Experience";
-import InMemoryExperience from "@/Experience/infraestructura/InMemoryExperience";
 import {CreateExperienceUseCase} from "@/Experience/application/usecases/CreateExperienceUseCase";
+import {PortfolioFactory} from "@/Portfolio/infraestructura/PortfolioFactory";
+import {TrainingFactory} from "@/Training/infraestructura/TrainingFactory";
+import {ExperienceFactory} from "@/Experience/infraestructura/ExperienceFactory";
 
 class AppSeeder {
 
@@ -108,7 +108,7 @@ class AppSeeder {
                 'https://gestion.podoclinicacoruna.es'
             ),
         ];
-        const portFolioRepository = InMemoryPortfolio.getInstance();
+        const portFolioRepository = PortfolioFactory.create();
         const portFolioUseCase = new CreatePortfolioUseCase(portFolioRepository);
         return await Promise.all(
             portFolioList.map(async (portFolio) => {
@@ -181,7 +181,7 @@ class AppSeeder {
                 null
             ),
         ];
-        const trainingsRepository = InMemoryTraining.getInstance();
+        const trainingsRepository = TrainingFactory.create();
         const trainingsUseCase = new CreateTrainingUseCase(trainingsRepository);
         return await Promise.all(
             trainingsList.map(async (training) => {
@@ -211,8 +211,7 @@ class AppSeeder {
                 'b69494d5-92ee-45f5-809c-76948d5f3fe1',
                 'Trocobuy',
                 'Portal web de intercambio de productos y servicios empresariales.',
-                'Desarrollo FrontEnd de la parte privada del portal. No sólo ayudé a mejorar la interfaz de la plataforma, además gracias\n' +
-                'a mis recomendaciones en cuanto a publicidad online mejoramos un 40% la consecución de leads de nuevos usuarios.',
+                'Desarrollo FrontEnd de la parte privada del portal. No sólo ayudé a mejorar la interfaz de la plataforma, además gracias a mis recomendaciones en cuanto a publicidad online mejoramos un 40% la generación de leads.',
                 '2011/2016',
                 'logo_trocobuy.webp'
             ),
@@ -225,7 +224,7 @@ class AppSeeder {
                 'logo_iberfinancia.webp'
             )
         ]
-        const experienceRepository = InMemoryExperience.getInstance();
+        const experienceRepository = ExperienceFactory.create();
         const experienceUseCase = new CreateExperienceUseCase(experienceRepository);
         return await Promise.all(
             experienceList.map( async (experience) => {

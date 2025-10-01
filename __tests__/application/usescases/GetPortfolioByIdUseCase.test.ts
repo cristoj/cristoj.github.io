@@ -1,7 +1,7 @@
-import { GetPortfolioByUuidCase } from '@/Porfolio/application/usecases/GetPortfolioByUuidCase';
-import PortfolioRepository from '@/Porfolio/domain/ports/PortfolioRepository';
-import { Portfolio } from '@/Porfolio/domain/models/Portfolio';
-import { PortfolioError } from '@/Porfolio/domain/errors/PortfolioError';
+import { GetPortfolioByUuidCase } from '@/Portfolio/application/usecases/GetPortfolioByUuidCase';
+import PortfolioRepository from '@/Portfolio/domain/ports/PortfolioRepository';
+import { Portfolio } from '@/Portfolio/domain/models/Portfolio';
+import { PortfolioError } from '@/Portfolio/domain/errors/PortfolioError';
 
 
 describe('GetPortfolioByIdUseCase', () => {

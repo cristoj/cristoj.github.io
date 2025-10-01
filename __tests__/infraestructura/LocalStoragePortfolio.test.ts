@@ -1,5 +1,5 @@
-import LocalStoragePortfolio from '@/Porfolio/infraestructura/LocalStoragePortfolio';
-import { Portfolio } from '@/Porfolio/domain/models/Portfolio';
+import LocalStoragePortfolio from '@/Portfolio/infraestructura/LocalStoragePortfolio';
+import { Portfolio } from '@/Portfolio/domain/models/Portfolio';
 
 const STORAGE_KEY = 'portfolio';
 

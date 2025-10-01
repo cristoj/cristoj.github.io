@@ -1,10 +1,10 @@
 import CreateCurriculumVitaeUseCase from "@/CurriculumVitae/application/usescases/CreateCurriculumVitaeUseCase";
 import CurriculumVitaeRenderer from "@/CurriculumVitae/infraestructura/CurriculumVitaeRenderer";
-import InMemoryCurriculumVitae from "@/CurriculumVitae/infraestructura/InMemoryCurriculumVitae";
 import AppSeeder from "@/seeder";
+import {CurriculumVitaeFactory} from "@/CurriculumVitae/infraestructura/CurriculumVitaeFactory";
 
 export async function initializeApp(): Promise<void> {
-    const cvRepository = new InMemoryCurriculumVitae();
+    const cvRepository = CurriculumVitaeFactory.create();
     const cvUseCase = new CreateCurriculumVitaeUseCase(cvRepository);
     const seeder = new AppSeeder();
     const developer = await seeder.generateCv();

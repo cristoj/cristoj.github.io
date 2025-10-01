@@ -1,6 +1,6 @@
-import PortfolioMapper, { PortfolioDTO } from '@/Porfolio/domain/mappers/PortfolioMapper';
-import { Portfolio } from '@/Porfolio/domain/models/Portfolio';
-import { PortfolioError } from '@/Porfolio/domain/errors/PortfolioError';
+import PortfolioMapper, { PortfolioDTO } from '@/Portfolio/domain/mappers/PortfolioMapper';
+import { Portfolio } from '@/Portfolio/domain/models/Portfolio';
+import { PortfolioError } from '@/Portfolio/domain/errors/PortfolioError';
 
 describe('PortfolioMapper', () => {
   const baseDto: PortfolioDTO = {

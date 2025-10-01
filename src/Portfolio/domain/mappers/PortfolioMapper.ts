@@ -1,4 +1,4 @@
-import {Portfolio} from "@/Porfolio/domain/models/Portfolio";
+import {Portfolio} from "@/Portfolio/domain/models/Portfolio";
 
 // DTO representing the serialized form of Portfolio
 export type PortfolioDTO = {

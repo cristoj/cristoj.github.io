@@ -1,7 +1,7 @@
 import ComponentDefault from "@/_shared/infraestructura/components/ComponentDefault";
-import {Portfolio} from "@/Porfolio/domain/models/Portfolio";
-import {GetPortfolioByUuidCase} from "@/Porfolio/application/usecases/GetPortfolioByUuidCase";
-import InMemoryPortfolio from "@/Porfolio/infraestructura/InMemoryPortfolio";
+import {Portfolio} from "@/Portfolio/domain/models/Portfolio";
+import {GetPortfolioByUuidCase} from "@/Portfolio/application/usecases/GetPortfolioByUuidCase";
+import {PortfolioFactory} from "@/Portfolio/infraestructura/PortfolioFactory";
 
 //  import portfolioCss from "@/_shared/infraestructura/assets/css/imports/portfolio.css?inline";
 class PortfolioComponent extends ComponentDefault {
@@ -24,7 +24,7 @@ class PortfolioComponent extends ComponentDefault {
         }
 
         try {
-            const getPortfolioCase = new GetPortfolioByUuidCase(InMemoryPortfolio.getInstance());
+            const getPortfolioCase = new GetPortfolioByUuidCase(PortfolioFactory.create());
             this.portfolio = await getPortfolioCase.execute(this.uuid!);
             if (!this.portfolio) {
                 this.error = 'Portfolio no encontrado.';

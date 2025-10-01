@@ -1,6 +1,6 @@
-import { Portfolio } from "@/Porfolio/domain/models/Portfolio";
-import PortfolioRepository from "@/Porfolio/domain/ports/PortfolioRepository";
-import PortfolioMapper from "@/Porfolio/domain/mappers/PortfolioMapper";
+import { Portfolio } from "@/Portfolio/domain/models/Portfolio";
+import PortfolioRepository from "@/Portfolio/domain/ports/PortfolioRepository";
+import PortfolioMapper from "@/Portfolio/domain/mappers/PortfolioMapper";
 
 export default class LocalStoragePortfolio implements PortfolioRepository {
     private readonly storageKey: string = 'portfolio';

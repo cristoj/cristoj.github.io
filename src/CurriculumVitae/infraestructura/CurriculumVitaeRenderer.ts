@@ -1,6 +1,6 @@
 import CVDeveloper from "@/CurriculumVitae/domain/models/CVDeveloper";
 import CurriculumVitae from "@/CurriculumVitae/domain/models/CurriculumVitae";
-import PortfolioSectionComponent from "@/Porfolio/infraestructura/components/PortfolioSectionComponent";
+import PortfolioSectionComponent from "@/Portfolio/infraestructura/components/PortfolioSectionComponent";
 import TrainingSectionComponent from "@/Training/infraestructura/components/TrainingSectionComponent";
 import ExperienceSectionComponent from "@/Experience/infraestructura/components/ExperienceSectionComponent";
 import {HeaderComponent} from "@/_shared/infraestructura/components/HeaderComponent";

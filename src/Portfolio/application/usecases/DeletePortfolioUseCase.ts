@@ -1,5 +1,5 @@
-import PortfolioRepository from '@/Porfolio/domain/ports/PortfolioRepository';
-import { PortfolioError } from '@/Porfolio/domain/errors/PortfolioError';
+import PortfolioRepository from '@/Portfolio/domain/ports/PortfolioRepository';
+import { PortfolioError } from '@/Portfolio/domain/errors/PortfolioError';
 
 export class DeletePortfolioUseCase {
     constructor(private readonly repository: PortfolioRepository) {}

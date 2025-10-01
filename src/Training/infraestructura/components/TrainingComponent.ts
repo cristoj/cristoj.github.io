@@ -1,7 +1,7 @@
 import ComponentDefault from "@/_shared/infraestructura/components/ComponentDefault";
 import {Training} from "@/Training/domain/models/Training";
 import {GetTrainingByUuidCase} from "@/Training/application/usecases/GetTrainingByUuidCase";
-import InMemoryTraining from "@/Training/infraestructura/InMemoryTraining";
+import {TrainingFactory} from "@/Training/infraestructura/TrainingFactory";
 
 class TrainingComponent extends ComponentDefault {
     private uuid: string | null = null;
@@ -23,7 +23,7 @@ class TrainingComponent extends ComponentDefault {
         }
 
         try {
-            const getTrainingCase = new GetTrainingByUuidCase(InMemoryTraining.getInstance());
+            const getTrainingCase = new GetTrainingByUuidCase(TrainingFactory.create());
             this.training = await getTrainingCase.execute(this.uuid!);
             if (!this.training) {
                 this.error = 'Training no encontrado.';

@@ -1,5 +1,5 @@
-import PortfolioRepository from "@/Porfolio/domain/ports/PortfolioRepository";
-import {Portfolio} from "@/Porfolio/domain/models/Portfolio";
+import PortfolioRepository from "@/Portfolio/domain/ports/PortfolioRepository";
+import {Portfolio} from "@/Portfolio/domain/models/Portfolio";
 
 export default class InMemoryPortfolio implements PortfolioRepository {
     private static instance: InMemoryPortfolio;

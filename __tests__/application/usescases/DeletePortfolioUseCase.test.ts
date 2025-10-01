@@ -1,6 +1,6 @@
-import { DeletePortfolioUseCase } from '@/Porfolio/application/usecases/DeletePortfolioUseCase';
-import PortfolioRepository from '@/Porfolio/domain/ports/PortfolioRepository';
-import { PortfolioError } from '@/Porfolio/domain/errors/PortfolioError';
+import { DeletePortfolioUseCase } from '@/Portfolio/application/usecases/DeletePortfolioUseCase';
+import PortfolioRepository from '@/Portfolio/domain/ports/PortfolioRepository';
+import { PortfolioError } from '@/Portfolio/domain/errors/PortfolioError';
 
 describe('DeletePortfolioUseCase', () => {
   let repository: jest.Mocked<PortfolioRepository>;

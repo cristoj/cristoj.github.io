@@ -1,6 +1,6 @@
-import { CreatePortfolioUseCase } from '@/Porfolio/application/usecases/CreatePortfolioUseCase';
-import PortfolioRepository from '@/Porfolio/domain/ports/PortfolioRepository';
-import { Portfolio } from '@/Porfolio/domain/models/Portfolio';
+import { CreatePortfolioUseCase } from '@/Portfolio/application/usecases/CreatePortfolioUseCase';
+import PortfolioRepository from '@/Portfolio/domain/ports/PortfolioRepository';
+import { Portfolio } from '@/Portfolio/domain/models/Portfolio';
 
 describe('CreatePortfolioUseCase', () => {
   let repository: jest.Mocked<PortfolioRepository>;

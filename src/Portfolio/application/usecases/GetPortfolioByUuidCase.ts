@@ -1,6 +1,6 @@
-import PortfolioRepository from '@/Porfolio/domain/ports/PortfolioRepository';
-import { Portfolio } from '@/Porfolio/domain/models/Portfolio';
-import { PortfolioError } from '@/Porfolio/domain/errors/PortfolioError';
+import PortfolioRepository from '@/Portfolio/domain/ports/PortfolioRepository';
+import { Portfolio } from '@/Portfolio/domain/models/Portfolio';
+import { PortfolioError } from '@/Portfolio/domain/errors/PortfolioError';
 
 export class GetPortfolioByUuidCase {
     constructor(private readonly repository: PortfolioRepository) {}

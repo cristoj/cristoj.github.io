@@ -1,7 +1,7 @@
 import ComponentDefault from "@/_shared/infraestructura/components/ComponentDefault";
 import {Experience} from "@/Experience/domain/models/Experience";
 import {GetExperienceByUuidCase} from "@/Experience/application/usecases/GetExperienceByUuidCase";
-import InMemoryExperience from "@/Experience/infraestructura/InMemoryExperience";
+import {ExperienceFactory} from "@/Experience/infraestructura/ExperienceFactory";
 
 class ExperienceComponent extends ComponentDefault {
     private uuid: string | null = null;
@@ -23,7 +23,7 @@ class ExperienceComponent extends ComponentDefault {
         }
 
         try {
-            const getCase = new GetExperienceByUuidCase(InMemoryExperience.getInstance());
+            const getCase = new GetExperienceByUuidCase(ExperienceFactory.create());
             this.experience = await getCase.execute(this.uuid!);
             if (!this.experience) {
                 this.error = 'Experience no encontrado.';

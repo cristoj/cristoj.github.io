@@ -1,5 +1,5 @@
 import ComponentDefault from "@/_shared/infraestructura/components/ComponentDefault";
-import PortfolioComponent from "@/Porfolio/infraestructura/components/PortfolioComponent";
+import PortfolioComponent from "@/Portfolio/infraestructura/components/PortfolioComponent";
 
 //  import portfolioListCss from "@/_shared/infraestructura/assets/css/imports/portfolio-list.css?inline";
 

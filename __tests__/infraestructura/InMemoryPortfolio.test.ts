@@ -1,5 +1,5 @@
-import InMemoryPortfolio from '@/Porfolio/infraestructura/InMemoryPortfolio';
-import { Portfolio } from '@/Porfolio/domain/models/Portfolio';
+import InMemoryPortfolio from '@/Portfolio/infraestructura/InMemoryPortfolio';
+import { Portfolio } from '@/Portfolio/domain/models/Portfolio';
 
 const makePortfolio = (id: string, title: string = 'Title') => new Portfolio(
   id,

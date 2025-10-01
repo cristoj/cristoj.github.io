@@ -1,4 +1,4 @@
-import { Portfolio } from "@/Porfolio/domain/models/Portfolio";
+import { Portfolio } from "@/Portfolio/domain/models/Portfolio";
 
 export default interface PortfolioRepository {
     save(portfolio: Portfolio): Promise<void>;
