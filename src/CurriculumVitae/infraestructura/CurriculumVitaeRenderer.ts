@@ -159,6 +159,10 @@ export default class CurriculumVitaeRenderer {
                                 <li> Mejorar el rendimiento web de clientes por encima del 90% con tecnologías como
                                     Astro.
                                 </li>
+                                <li>Impulsé la migración tecnológica móvil de la organización desde IONIC a Flutter,
+                                    consiguiendo un beneficio tangible en rendimiento, productividad y usabilidad en las
+                                    aplicaciones desarrolladas.
+                                </li>
                             </ul>
                             <p> Estoy en constante búsqueda de nuevos desafíos que me permitan seguir creciendo
                                 profesional y personalmente.</p>
@@ -180,7 +184,7 @@ export default class CurriculumVitaeRenderer {
                             <h2>Skills</h2>
                             <dl class="skills__list">
                                 ${Object.entries(skills).map(([category, skills]) => {
-                                    if (!skills.length || [SkillCategories.PATRONS_DESIGN.toString(), skillCategories.CODE_QUALITY.toString()].includes(category) ) {
+                                    if (!skills.length || [SkillCategories.PATRONS_DESIGN.toString(), skillCategories.CODE_QUALITY.toString()].includes(category)) {
                                         return ``;
                                     }
                                     return `<dt class="mt--1"><strong>${category}</strong></dt><dd>${this.renderTags(skills)}</dd></dt>`
