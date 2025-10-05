@@ -34,6 +34,8 @@ export default class CurriculumVitaeMapper {
                 tools: skills[SkillCategories.TOOLS],
                 methodologies: skills[SkillCategories.METHODOLOGIES],
                 cloud: skills[SkillCategories.CLOUD],
+                designPatterns: skills[SkillCategories.PATRONS_DESIGN],
+                codeQuality: skills[SkillCategories.CODE_QUALITY],
                 softSkills: skills[SkillCategories.OTHERS]
             }
         };

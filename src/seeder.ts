@@ -34,9 +34,11 @@ class AppSeeder {
 
         developer.addSkills(SkillCategories.LANGUAGES, ['html', 'css', 'js', 'ts', 'php', 'dart', 'mysql']);
         developer.addSkills(SkillCategories.FRAMEWORKS, ['Angular', 'React', 'Flutter', 'Laravel', 'WordPress', 'Astro']);
-        developer.addSkills(SkillCategories.TOOLS, ['Docker', 'Postman', 'SonarQube', 'VS Code', 'PHP Storm', 'Xcode', 'A. Studio', 'XD', 'Photoshop',]);
-        developer.addSkills(SkillCategories.CLOUD, ['GitHub', 'AWS', 'Vercel', 'Cloudflare', 'Firebase', 'Mailchimp', 'Apps Stores']);
+        developer.addSkills(SkillCategories.TOOLS, ['Docker', 'Postman', 'SonarQube', 'VS Code', 'PHP Storm', 'Xcode', 'A. Studio', 'XD', 'Photoshop']);
+        developer.addSkills(SkillCategories.CLOUD, ['GitHub', 'AWS', 'Vercel', 'Cloudflare', 'n8n', 'Firebase', 'Mailchimp', 'Apps Stores']);
         developer.addSkills(SkillCategories.METHODOLOGIES, ['Scrum']);
+        developer.addSkills(SkillCategories.CODE_QUALITY, ['Unit test', 'Integration test']);
+        developer.addSkills(SkillCategories.PATRONS_DESIGN, ['DDD', 'MVC', 'Diseño de APIs']);
         developer.addSkills(SkillCategories.OTHERS, ['Emprendimiento', 'Trabajo en equipo', 'Ganas de aprender', 'Resolución de problemas']);
         return developer;
      }

@@ -1,5 +1,7 @@
 import CVDeveloper from "@/CurriculumVitae/domain/models/CVDeveloper";
 import CurriculumVitae from "@/CurriculumVitae/domain/models/CurriculumVitae";
+import skillCategories from "@/CurriculumVitae/domain/value-objects/skill/SkillCategories";
+import SkillCategories from "@/CurriculumVitae/domain/value-objects/skill/SkillCategories";
 import PortfolioSectionComponent from "@/Portfolio/infraestructura/components/PortfolioSectionComponent";
 import TrainingSectionComponent from "@/Training/infraestructura/components/TrainingSectionComponent";
 import ExperienceSectionComponent from "@/Experience/infraestructura/components/ExperienceSectionComponent";
@@ -148,11 +150,6 @@ export default class CurriculumVitaeRenderer {
                                 una comunicación fluida.</p>
                             <p>Algunos logros incluyen:</p>
                             <ul class="about__list">
-                                <li>Fui responsable de la integración del motor de reconocimiento de imagen en la
-                                    plataforma STIK (IA), mejorando y aplicando una tecnología que ya había explorado
-                                    hace 8 años (pionero en su utilización en España), demostrando mi capacidad para
-                                    estar a la vanguardia.
-                                </li>
                                 <li> Liderar la obtención de la certificación ISO 9001, demostrando mi compromiso con la
                                     calidad y los procesos.
                                 </li>
@@ -183,7 +180,7 @@ export default class CurriculumVitaeRenderer {
                             <h2>Skills</h2>
                             <dl class="skills__list">
                                 ${Object.entries(skills).map(([category, skills]) => {
-                                    if (!skills.length) {
+                                    if (!skills.length || [SkillCategories.PATRONS_DESIGN.toString(), skillCategories.CODE_QUALITY.toString()].includes(category) ) {
                                         return ``;
                                     }
                                     return `<dt class="mt--1"><strong>${category}</strong></dt><dd>${this.renderTags(skills)}</dd></dt>`
