@@ -222,6 +222,10 @@ var j=Object.defineProperty;var J=(s,e,t)=>e in s?j(s,e,{enumerable:!0,configura
                                 <li> Mejorar el rendimiento web de clientes por encima del 90% con tecnologías como
                                     Astro.
                                 </li>
+                                <li>Impulsé la migración tecnológica móvil de la organización desde IONIC a Flutter,
+                                    consiguiendo un beneficio tangible en rendimiento, productividad y usabilidad en las
+                                    aplicaciones desarrolladas.
+                                </li>
                             </ul>
                             <p> Estoy en constante búsqueda de nuevos desafíos que me permitan seguir creciendo
                                 profesional y personalmente.</p>
