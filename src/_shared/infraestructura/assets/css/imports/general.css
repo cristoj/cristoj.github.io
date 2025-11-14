@@ -67,6 +67,10 @@ h6 {
     font-size: var(--font-size-h6);
 }
 
+strong{
+    font-weight: var(--font-weight-semi-bold);
+}
+
 a {
     color: var(--primary-color);
     text-decoration: none;

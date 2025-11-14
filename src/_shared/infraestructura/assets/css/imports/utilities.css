@@ -73,6 +73,10 @@
     text-align: center;
 }
 
+.text-primary{
+    /*color: hsl(from var(--primary-color) h s calc(l + 20));*/
+    color: var(--current-primary-color-variant);
+}
 
 @media (width >= 768px) {
     .py-lg-6{

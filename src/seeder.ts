@@ -24,7 +24,7 @@ class AppSeeder {
             'cristojvt@gmail.com',
             '+34697356153',
             [Locations.ACORUNA, Locations.REMOTO],
-            'Desarrollador Full-Stack con más de 15 años de experiencia en Front-End | Back-End | Mobile',
+            'Desarrollador Especialista Front-End & Móvil con más de 15 años de experiencia.<br />Experto en <strong class="text-primary">Angular && Flutter</strong>, y con una sólida base Full-Stack para proyectos end-to-end.',
             'https://www.linkedin.com/in/cristobal-terceiro',
             'https://github.com/cristoj',
             portFolioListUuids,
@@ -33,12 +33,12 @@ class AppSeeder {
         );
 
         developer.addSkills(SkillCategories.LANGUAGES, ['html', 'css', 'js', 'ts', 'php', 'dart', 'mysql']);
-        developer.addSkills(SkillCategories.FRAMEWORKS, ['Angular', 'React', 'Flutter', 'Laravel', 'WordPress', 'Astro']);
-        developer.addSkills(SkillCategories.TOOLS, ['Docker', 'Postman', 'SonarQube', 'VS Code', 'PHP Storm', 'Xcode', 'A. Studio', 'XD', 'Photoshop']);
+        developer.addSkills(SkillCategories.FRAMEWORKS, ['Angular', 'Flutter', 'React', 'Laravel', 'WordPress', 'Astro']);
+        developer.addSkills(SkillCategories.TOOLS, ['Docker', 'Claude Code', 'Postman', 'SonarQube', 'VS Code', 'PHP Storm', 'Xcode', 'A. Studio', 'XD', 'Photoshop']);
         developer.addSkills(SkillCategories.CLOUD, ['GitHub', 'AWS', 'Vercel', 'Cloudflare', 'n8n', 'Firebase', 'Mailchimp', 'Apps Stores']);
         developer.addSkills(SkillCategories.METHODOLOGIES, ['Scrum']);
-        developer.addSkills(SkillCategories.CODE_QUALITY, ['Unit test', 'Integration test']);
-        developer.addSkills(SkillCategories.PATRONS_DESIGN, ['DDD', 'MVC', 'Diseño de APIs']);
+        developer.addSkills(SkillCategories.CODE_QUALITY, ['Unit tests', 'Integration tests', 'e2e tests']);
+        developer.addSkills(SkillCategories.PATRONS_DESIGN, ['DDD', 'MVC', 'REST APIs']);
         developer.addSkills(SkillCategories.OTHERS, ['Emprendimiento', 'Trabajo en equipo', 'Ganas de aprender', 'Resolución de problemas']);
         return developer;
      }

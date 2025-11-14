@@ -27,6 +27,7 @@
         --current-text: var(--text-dark-color);
         --current-muted: var(--text-dark-muted);
         --current-portfolio-bg-color: var(--portfolio-item--dark-color);
+        --current-primary-color-variant: var(--primary-color-light);
 
         .theme-button__to-dark{
             display: none;
@@ -52,6 +53,8 @@
         --current-text: var(--text-light-color);
         --current-muted: var(--text-light-muted);
         --current-portfolio-bg-color: var(--portfolio-item--light-color);
+        --current-primary-color-variant: var(--primary-color-dark);
+
 
         .theme-button__to-dark{
             display: initial;

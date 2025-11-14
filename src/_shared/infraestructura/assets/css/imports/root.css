@@ -1,6 +1,8 @@
 :root {
     color-scheme: light dark;
     --primary-color: #A972E8;
+    --primary-color-light: #c8b7db;
+    --primary-color-dark: #4b138f;
     --bg-dark-color: #060617;
     /*--bg-light-color: #F6F6F6;*/
     --bg-light-color: #FFFFFF;
@@ -15,6 +17,7 @@
     --current-text: light-dark(var(--text-light-color), var(--text-dark-color));
     --current-muted: light-dark(var(--text-light-muted), var(--text-dark-muted));
     --current-portfolio-bg-color: light-dark(var(--portfolio-item--light-color), var(--portfolio-item--dark-color));
+    --current-primary-color-variant: light-dark(var(--primary-color-dark), var(--primary-color-light));
     --font-family: 'Lato', sans-serif;
     --font-family-titles: 'Gloock', sans-serif;
     --aspect-ratio: 16/9;
@@ -30,5 +33,6 @@
     --font-size-h5: var(--font-size-lg);
     --font-size-h6: var(--font-size);
     --font-weight-bold: 900;
+    --font-weight-semi-bold: 700;
 
 }

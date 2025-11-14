@@ -1,11 +1,9 @@
 import CVDeveloper from "@/CurriculumVitae/domain/models/CVDeveloper";
 import CurriculumVitae from "@/CurriculumVitae/domain/models/CurriculumVitae";
-import skillCategories from "@/CurriculumVitae/domain/value-objects/skill/SkillCategories";
-import SkillCategories from "@/CurriculumVitae/domain/value-objects/skill/SkillCategories";
 import PortfolioSectionComponent from "@/Portfolio/infraestructura/components/PortfolioSectionComponent";
 import TrainingSectionComponent from "@/Training/infraestructura/components/TrainingSectionComponent";
 import ExperienceSectionComponent from "@/Experience/infraestructura/components/ExperienceSectionComponent";
-import {HeaderComponent} from "@/_shared/infraestructura/components/HeaderComponent";
+import { HeaderComponent } from "@/_shared/infraestructura/components/HeaderComponent";
 import CurriculumVitaeSchemaComponent from "@/_shared/infraestructura/components/CurriculumVitaeSchemaComponent";
 
 /**
@@ -139,33 +137,16 @@ export default class CurriculumVitaeRenderer {
                         </div>
                         <div>
                             <h2>Sobre mí</h2>
-                            <p>Me considero un profesional responsable y organizado que asume los retos como una
-                                oportunidad para aprender y crecer. Este enfoque lo apliqué en mi último proyecto, la
-                                startup STIK, donde no solo me enfrenté a desafíos técnicos, sino que también aporté mi
-                                formación en emprendimiento para impulsar el proyecto.
-                            <p>
-                            <p>Como desarrollador Full-Stack, mi experiencia incluye la gestión de proyectos end-to-end
-                                y la coordinación directa con clientes de alto perfil (como CEOE, CEPYME, Diputación de
-                                Ourense, Ecoembes, CLA, etc...), asegurando la correcta definición de los requisitos y
-                                una comunicación fluida.</p>
-                            <p>Algunos logros incluyen:</p>
+                            <p>Me considero un profesional responsable y organizado que asume los retos como una oportunidad para aprender y crecer. Mi enfoque se centra en la excelencia del desarrollo <span class="text-primary">Front-End y Móvil</span>, siendo un experto con más de 15 años de experiencia en <span class="text-primary">Angular y Flutter</span>. Busco ahora aplicar esta especialización en un entorno de gran escala.</p>
+                            <p>Como desarrollador, mi experiencia incluye la arquitectura end-to-end de proyectos y la coordinación directa con <span class="text-primary">clientes de alto perfil</span> (CEOE, CEPYME, CLA, Ecoembes, etc.), lo que me permite asegurar la correcta definición de los requisitos y una comunicación fluida.</p>
+                            <p>Algunos logros técnicos clave incluyen:</p>
                             <ul class="about__list">
-                                <li> Liderar la obtención de la certificación ISO 9001, demostrando mi compromiso con la
-                                    calidad y los procesos.
-                                </li>
-                                <li> Aportar conocimientos de emprendimiento que resultaron en la consecución de más de
-                                    300k€ en recursos para el proyecto STIK.
-                                </li>
-                                <li> Mejorar el rendimiento web de clientes por encima del 90% con tecnologías como
-                                    Astro.
-                                </li>
-                                <li>Impulsé la migración tecnológica móvil de la organización desde IONIC a Flutter,
-                                    consiguiendo un beneficio tangible en rendimiento, productividad y usabilidad en las
-                                    aplicaciones desarrolladas.
-                                </li>
+                                <li><span class="text-primary">Lideré la migración tecnológica móvil</span> de la organización desde IONIC a <span class="text-primary">Flutter</span>, consiguiendo un beneficio tangible en <span class="text-primary">rendimiento, productividad y usabilidad</span>.</li>
+                                <li><span class="text-primary">Fui responsable de la integración del motor de reconocimiento de imagen</span> en la plataforma STIK (IA), demostrando mi capacidad para estar a la vanguardia tecnológica.</li>
+                                <li><span class="text-primary">Mejoré el rendimiento web de clientes por encima del 90%</span> con tecnologías modernas como Astro, optimizando la experiencia de usuario y SEO.</li>
+                                <li>Mi compromiso con la <span class="text-primary">calidad</span> y los procesos se refleja en la obtención de la certificación ISO 9001, complementando mis habilidades técnicas.</li>                                
                             </ul>
-                            <p> Estoy en constante búsqueda de nuevos desafíos que me permitan seguir creciendo
-                                profesional y personalmente.</p>
+                            <p>Estoy en constante búsqueda de nuevos desafíos que me permitan seguir creciendo profesionalmente en Angular y Flutter, mis áreas de mayor pasión y expertise.</p>
                         </div>
                     </div>
                 </section>
@@ -184,27 +165,24 @@ export default class CurriculumVitaeRenderer {
                             <h2>Skills</h2>
                             <dl class="skills__list">
                                 ${Object.entries(skills).map(([category, skills]) => {
-                                    if (!skills.length || [SkillCategories.PATRONS_DESIGN.toString(), skillCategories.CODE_QUALITY.toString()].includes(category)) {
-                                        return ``;
-                                    }
-                                    return `<dt class="mt--1"><strong>${category}</strong></dt><dd>${this.renderTags(skills)}</dd></dt>`
-                                }).join('')}
+            return `<dt class="mt--1"><strong>${category}</strong></dt><dd>${this.renderTags(skills)}</dd></dt>`
+        }).join('')}
                             </dl>
                         </div>
                     </div>
                 </section>
 
                 ${portfolioUuids && portfolioUuids.length > 0
-                        ? `<portfolio-section uuids="${portfolioUuids}"></portfolio-section>`
-                        : ''}
+                ? `<portfolio-section uuids="${portfolioUuids}"></portfolio-section>`
+                : ''}
 
                 ${experienceUuids && experienceUuids.length > 0
-                        ? `<experience-section uuids="${experienceUuids}"></experience-section>`
-                        : ''}
+                ? `<experience-section uuids="${experienceUuids}"></experience-section>`
+                : ''}
 
                 ${trainingUuids && trainingUuids.length > 0
-                        ? `<training-section uuids="${trainingUuids}"></training-section>`
-                        : ''}
+                ? `<training-section uuids="${trainingUuids}"></training-section>`
+                : ''}
             </div>
             <schema-component
                     uuid="${this.curriculumVitae.getUuid()}"
