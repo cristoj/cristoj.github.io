@@ -137,7 +137,7 @@ export default class CurriculumVitaeRenderer {
                         </div>
                         <div>
                             <h2>Sobre mí</h2>
-                            <p>Me considero un profesional responsable y organizado que asume los retos como una oportunidad para aprender y crecer. Mi enfoque se centra en la excelencia del desarrollo <span class="text-primary">Front-End y Móvil</span>, siendo un experto con más de 15 años de experiencia en <span class="text-primary">Angular y Flutter</span>. Busco ahora aplicar esta especialización en un entorno de gran escala.</p>
+                            <p>Mi carrera se ha centrado en el desarrollo de código sostenible en <span class="text-primary">Front-End & Móvil</span>, con <span class="text-primary">Angular & Flutter</span> como mi enfoque principal. Me considero un <span class="text-primary">profesional responsable y organizado</span> que asume los retos como una oportunidad para aprender y crecer, aplicando siempre las buenas prácticas para un código escalable.</p>
                             <p>Como desarrollador, mi experiencia incluye la arquitectura end-to-end de proyectos y la coordinación directa con <span class="text-primary">clientes de alto perfil</span> (CEOE, CEPYME, CLA, Ecoembes, etc.), lo que me permite asegurar la correcta definición de los requisitos y una comunicación fluida.</p>
                             <p>Algunos logros técnicos clave incluyen:</p>
                             <ul class="about__list">

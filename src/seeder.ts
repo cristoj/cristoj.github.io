@@ -24,7 +24,7 @@ class AppSeeder {
             'cristojvt@gmail.com',
             '+34697356153',
             [Locations.ACORUNA, Locations.REMOTO],
-            'Desarrollador Especialista Front-End & Móvil con más de 15 años de experiencia.<br />Experto en <strong class="text-primary">Angular && Flutter</strong>, y con una sólida base Full-Stack para proyectos end-to-end.',
+            'Desarrollador <strong class="text-primary">Front-End & Móvil</strong> con más de 15 años de experiencia.<br>Especializado en <strong class="text-primary">Angular & Flutter</strong>, y con una sólida base Full-Stack para proyectos end-to-end.',
             'https://www.linkedin.com/in/cristobal-terceiro',
             'https://github.com/cristoj',
             portFolioListUuids,
